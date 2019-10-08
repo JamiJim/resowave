@@ -1,0 +1,477 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 42938266, guid: de72a6d2da64d114d95e3c5a01cfaec5, type: 3}
+  m_Name: PlayMakerGlobals
+  m_EditorClassIdentifier: 
+  variables:
+    floatVariables:
+    - useVariable: 1
+      name: Hour
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.Spins
+      tooltip: Spins travelled
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.Head.Bend
+      tooltip: Head's local position in forward/backward direction (positive forward)
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.Head.Lean
+      tooltip: Head's local position in left/right direction (positive left)
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.Head.Rot
+      tooltip: Head's local rotation ("yaw") about up-axis (positive counterclockwise)
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.InputSpeed
+      tooltip: Pedaling speed
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZPlayer.Speed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    intVariables:
+    - useVariable: 1
+      name: ChallengeId
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZLifeCycleResistance
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 3
+    - useVariable: 1
+      name: ducks_following
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: heli_section
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    boolVariables:
+    - useVariable: 1
+      name: GazeMenuActive
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: HUD_fade_in_progress
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: InChallengeFlow
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: MenuTransitionInProgress
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: NotLookingUp
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 1
+    - useVariable: 1
+      name: SeenComfortableChallenge
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: SeenIntenseChallenge
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: SeenModerateChallenge
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.IsPS4
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.LeftButton.Down
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.LeftButton.Pressed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.LeftButton.Released
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.RightButton.Down
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.RightButton.Pressed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZController.RightButton.Released
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsCalibrating
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsDemo
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsIntro
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsLifeCycle
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsMenu
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsMobile
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsOnline
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsSensor
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsShell
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsTiltSteering
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZGamePlayer.IsTransitioning
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZShell.IsFirstTime
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZTutorMan.ShowController
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZTutorMan.ShowGhost
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: VZTutorMan.ShowReal
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: fueling
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    stringVariables: []
+    vector2Variables: []
+    vector3Variables:
+    - useVariable: 1
+      name: GazeHitPos
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {x: 0, y: 0, z: 0}
+    - useVariable: 1
+      name: VZController.Head.Forward
+      tooltip: Head's forward direction
+      showInInspector: 0
+      networkSync: 0
+      value: {x: 0, y: 0, z: 0}
+    - useVariable: 1
+      name: VZController.Head.Position
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {x: 0, y: 0, z: 0}
+    - useVariable: 1
+      name: targetted_point
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {x: 0, y: 0, z: 0}
+    colorVariables: []
+    rectVariables: []
+    quaternionVariables: []
+    gameObjectVariables:
+    - useVariable: 1
+      name: GazedObject
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: VZGazeDot
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: VZPlayer
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    - useVariable: 1
+      name: VZTutorMan
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 0}
+    objectVariables: []
+    materialVariables: []
+    textureVariables: []
+    arrayVariables: []
+    enumVariables: []
+    categories:
+    - 
+    variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  events:
+  - turret_killed
+  - missile_hit_player
+  - reload
+  - reset_sections
+  - restart_game
+  - reset
+  - cheat
+  - generate_island_a_gameplay
+  - generate_gameplay
+  - dead
+  - reset_incomingFSM
+  - fired
+  - entered_mission_trigger
+  - low_fuel
+  - entered_tip1_trigger
+  - set_master_client_true
+  - start_aiming_makers
+  - hide_aiming_markers
+  - entered_tip2_trigger
+  - entered_tip3_trigger
+  - tutorial_horse_zone_reached
+  - tutorial_zone_reset
+  - restart
+  - entered_turn1exit_trigger
+  - entered_turn2_trigger
+  - entered_turn2exit_trigger
+  - entered_finish_trigger
+  - turret_sheilds_off
+  - turret_shields_on
+  - shield_hit
+  - max_missile_targets
+  - shield_turret_killed
+  - no_fuel
+  - turret_shields_tell
+  - duck_hits_grass
+  - duck_follows
+  - duck_bored
+  - max_ducks
+  - fish_collect_gem
+  - duck_new_home_pos
+  - duck_delivered
+  - old_lady_happy
+  - fish_food_dropped
+  - duck_check_side
+  - duck_take_flight
+  - fish_follow
+  - day_time
+  - night_time
+  - fish_poisoned
+  - duck_feeds
+  - dusk_time
+  - evening_time
+  - duck_set_flight_path
+  - generation_complete
+  - generated_snaking
+  - generated_island
+  - duck_value_down
+  - duck_is_follower
+  - duck_is_not_follower
+  - duck_count_reset
+  - duck_count_add_1
+  - duck_count_minus_1
+  - request_follower_count
+  - answer_follower_count
+  - drop_gem
+  - destroy_gem
+  - flak_hit_player
+  - boat_killed
+  - gunner_killed
+  - FadeInShouts
+  - FadeOutShouts
+  - DraftReward
+  - became_master_client
+  - ShoutsOn
+  - FacesOn
+  - MenuOff
+  - IsMenuTrue
+  - collide_fuel
+  - Shouted
+  - GhostReplied
+  - duck_upset
+  - NoHeartRateTimeout
+  - GotHeartRate
+  - PromptHeartRate
+  - duck_request
+  - ShortcutReward
+  - InfoOn
+  - InfoOff
+  - hit_streak_broken
+  - killed_enemy
+  - click
+  - hover
+  - release
+  - ready
+  - PHOTON / CONNECTED TO PHOTON
+  - PHOTON / CONNECTION FAIL
+  - PHOTON / CREATED ROOM
+  - PHOTON / CUSTOM AUTHENTICATION FAILED
+  - PHOTON / CUSTOM ROOM PROPERTIES CHANGED
+  - PHOTON / DISCONNECTED FROM PHOTON
+  - PHOTON / FAILED TO CONNECT TO PHOTON
+  - PHOTON / FRIEND LIST UPDATED
+  - PHOTON / JOINED LOBBY
+  - PHOTON / JOINED ROOM
+  - PHOTON / LEFT LOBBY
+  - PHOTON / LEFT ROOM
+  - PHOTON / MASTER CLIENT SWITCHED
+  - PHOTON / MAX CCCU REACHED
+  - PHOTON / PHOTON CREATE ROOM FAILED
+  - PHOTON / PHOTON INSTANTIATE
+  - PHOTON / PHOTON JOIN ROOM FAILED
+  - PHOTON / PHOTON PLAYER CONNECTED
+  - PHOTON / PHOTON PLAYER DISCONNECTED
+  - PHOTON / PHOTON RANDOM JOIN FAILED
+  - PHOTON / PLAYER PROPERTIES CHANGED
+  - PHOTON / RECEIVED ROOM LIST
+  - PHOTON / RECEIVED ROOM LIST UPDATE
+  - 'PHOTON / STATE : CONNECTED'
+  - 'PHOTON / STATE : CONNECTING'
+  - 'PHOTON / STATE : DISCONNECTED'
+  - 'PHOTON / STATE : DISCONNECTING'
+  - 'PHOTON / STATE : INITIALIZING APPLICATION'
+  - game_menu_on
+  - on_pause_menu
+  - off_pause_menu
+  - mech_aiming_on
+  - mech_aiming_off
+  - shortcut
+  - entered_section_trigger
+  - game_menu_back_on
+  - restart_section
+  - hoverOff
+  - workout_page_on
+  - '!LifeCycle'
+  - comfort_warning_page_on
+  - FadeOut
+  - PopOn
+  - hovered
+  - unhovered
+  - clicked
+  - upgrade_toggled
+  - next_page
+  - last_page
+  - tab_clicked

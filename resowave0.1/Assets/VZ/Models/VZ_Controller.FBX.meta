@@ -1,0 +1,1230 @@
+fileFormatVersion: 2
+guid: abe4459d5d9c0d94c93e8d7c7067c78c
+timeCreated: 1458756164
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: crank
+    100002: grip_X
+    100004: pedal_left
+    100006: pedal_right
+    100008: seat_X
+    100010: //RootNode
+    100012: Button_A
+    100014: Button_B
+    100016: Button_Down
+    100018: Button_Left
+    100020: Button_Right
+    100022: Button_Up
+    100024: Button_X
+    100026: Button_Y
+    100028: Pedal_Left
+    100030: Pedal_Right
+    100032: resistance
+    100034: seat
+    100036: Trigger_Left
+    100038: Trigger_Right
+    100040: VZ_Controller_mesh
+    100042: VZC_center
+    100044: VZC_root
+    100046: X_Handlebars
+    100048: X_Seat
+    400000: crank
+    400002: grip_X
+    400004: pedal_left
+    400006: pedal_right
+    400008: seat_X
+    400010: //RootNode
+    400012: Button_A
+    400014: Button_B
+    400016: Button_Down
+    400018: Button_Left
+    400020: Button_Right
+    400022: Button_Up
+    400024: Button_X
+    400026: Button_Y
+    400028: Pedal_Left
+    400030: Pedal_Right
+    400032: resistance
+    400034: seat
+    400036: Trigger_Left
+    400038: Trigger_Right
+    400040: VZ_Controller_mesh
+    400042: VZC_center
+    400044: VZC_root
+    400046: X_Handlebars
+    400048: X_Seat
+    2300000: crank
+    2300002: grip_X
+    2300004: pedal_left
+    2300006: pedal_right
+    2300008: seat_X
+    2300010: Pedal_Left
+    2300012: Pedal_Right
+    2300014: resistance
+    2300016: seat
+    2300018: Trigger_Left
+    2300020: Trigger_Right
+    2300022: X_Handlebars
+    2300024: X_Seat
+    3300000: crank
+    3300002: grip_X
+    3300004: pedal_left
+    3300006: pedal_right
+    3300008: seat_X
+    3300010: Pedal_Left
+    3300012: Pedal_Right
+    3300014: resistance
+    3300016: seat
+    3300018: Trigger_Left
+    3300020: Trigger_Right
+    3300022: X_Handlebars
+    3300024: X_Seat
+    4300000: seat_X
+    4300002: crank
+    4300004: pedal_left
+    4300006: pedal_right
+    4300008: grip_X
+    4300010: X_Handlebars
+    4300012: Trigger_Right
+    4300014: Trigger_Left
+    4300016: resistance
+    4300018: X_Seat
+    4300020: Pedal_Right
+    4300022: Pedal_Left
+    4300024: seat
+    4300026: VZ_Controller_mesh
+    7400000: Pedal
+    7400002: FoldUp
+    7400004: FoldDown
+    7400006: SeatDown
+    7400008: ResistanceUp
+    7400010: RTrigger
+    7400012: RTriggerOut
+    7400014: LTrigger
+    7400016: LTriggerOut
+    7400018: ButtonY
+    7400020: ButtonB
+    7400022: ButtonA
+    7400024: ButtonX
+    7400026: ButtonUp
+    7400028: ButtonRight
+    7400030: ButtonDown
+    7400032: ButtonLeft
+    9500000: //RootNode
+    13700000: VZ_Controller_mesh
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Pedal
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FoldUp
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 1
+      - path: VZC_root
+        weight: 1
+      - path: VZC_root/VZC_center
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FoldDown
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 1
+      - path: VZC_root
+        weight: 1
+      - path: VZC_root/VZC_center
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SeatDown
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ResistanceUp
+      takeName: Take 001
+      firstFrame: 51
+      lastFrame: 58
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RTrigger
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 62
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LTrigger
+      takeName: Take 001
+      firstFrame: 64
+      lastFrame: 66
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonY
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonB
+      takeName: Take 001
+      firstFrame: 74
+      lastFrame: 76
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonA
+      takeName: Take 001
+      firstFrame: 78
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonX
+      takeName: Take 001
+      firstFrame: 82
+      lastFrame: 84
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonUp
+      takeName: Take 001
+      firstFrame: 86
+      lastFrame: 88
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonRight
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 92
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonDown
+      takeName: Take 001
+      firstFrame: 94
+      lastFrame: 96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ButtonLeft
+      takeName: Take 001
+      firstFrame: 98
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: VZ_Controller_mesh
+        weight: 0
+      - path: VZC_root
+        weight: 0
+      - path: VZC_root/VZC_center
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_A
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_B
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Down
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Left
+        weight: 1
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Up
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_X
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Button_Y
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/resistance
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Handlebars/Trigger_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Left
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/crank/Pedal_Right
+        weight: 0
+      - path: VZC_root/VZC_center/X_Seat/seat
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
