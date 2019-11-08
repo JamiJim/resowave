@@ -323,7 +323,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: StartingScene
-      value: StartingScene
+      value: Test+Deletion
       objectReference: {fileID: 0}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: SkyboxFader
@@ -338,6 +338,11 @@ PrefabInstance:
       propertyPath: targetTime
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
+      propertyPath: StartPlatform
+      value: 
+      objectReference: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
 --- !u!1 &705507993
@@ -610,11 +615,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
-        type: 3}
-      propertyPath: m_Name
-      value: Start Platform
-      objectReference: {fileID: 0}
     - target: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -674,6 +674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
+        type: 3}
+      propertyPath: m_Name
+      value: Start Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50455995ede93e649b389864f875df79, type: 3}

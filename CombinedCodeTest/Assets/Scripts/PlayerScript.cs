@@ -119,7 +119,7 @@ public class PlayerScript : MonoBehaviour
 
             //Instantiate 1 of the 12 possible coin patterns
 
-            switch (randomC)
+            /*switch (randomC)
             {
                 case 1:
                     Instantiate(CoinPattern1, spawnLocC, Quaternion.identity);
@@ -156,7 +156,7 @@ public class PlayerScript : MonoBehaviour
                     break;
 
 
-            }
+            }*/
         }
 
     
