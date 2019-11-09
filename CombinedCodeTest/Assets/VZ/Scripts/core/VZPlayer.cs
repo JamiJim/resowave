@@ -65,14 +65,13 @@ public class VZPlayer : MonoBehaviour
     private float startZ;
     private float startZT = 1475.0f;
 
-    public GameObject Platform1;
-    public GameObject Platform2;
-    public GameObject Platform3;
-    public GameObject Platform4;
+    public GameObject[] Platforms;
 
     public GameObject[] Terrains;
     public GameObject[] desertTrn;
     public GameObject[] cityTrrn;
+
+    public GameObject[] Coins;
 
     public float targetTime = 120.0f;
     int levelNo = 0;
@@ -326,13 +325,14 @@ public class VZPlayer : MonoBehaviour
         {
             startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0, startZ);
-            Vector3 spawnLocC = new Vector3(0, 1.12f, startZ);
-            int random = UnityEngine.Random.Range(1, 5);
+            Vector3 spawnLocC = new Vector3(-5, 1.12f, startZ + 25f);
+            int random = UnityEngine.Random.Range(0, 4);
             int randomC = UnityEngine.Random.Range(1, 13);
             UntilNewLevel -= 1;
-
+            Instantiate(Platforms[random], spawnLoc, Quaternion.identity);
+            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(90, 0, 0));
             Debug.Log(UntilNewLevel);
-            switch (random)
+           /* switch (random)
             {
                 case 1:
                     Instantiate(Platform1, spawnLoc, Quaternion.identity);
@@ -354,9 +354,10 @@ public class VZPlayer : MonoBehaviour
 
 
 
-            }
+            }*/
 
-        
+         
+      
 
         }
 
@@ -455,29 +456,7 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);
             int randomT = UnityEngine.Random.Range(0, 4);
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
-            /*switch (randomT)
-            {
-                case 1:
-                    Instantiate(Terrains[1], spawnLoc, Quaternion.identity);
 
-                    break;
-                case 2:
-                    Instantiate(Terrains[1], spawnLoc, Quaternion.identity);
-
-                    break;
-
-                case 3:
-                    Instantiate(Terrains[1], spawnLoc, Quaternion.identity);
-
-                    break;
-                case 4:
-                    Instantiate(Terrains[1], spawnLoc, Quaternion.identity);
-
-                    break;
-
-
-
-            }*/
         }
 
 #if VZ_PLAYMAKER
