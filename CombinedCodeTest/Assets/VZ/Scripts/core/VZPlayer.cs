@@ -59,7 +59,7 @@ public class VZPlayer : MonoBehaviour
    public static VZController Controller { get; private set; }
 
 
-    //Becker Stuff
+    //Becker Stuff 1
     [SerializeField]
     private float speed = 5.0f;
     private float startZ;
@@ -84,6 +84,7 @@ public class VZPlayer : MonoBehaviour
     public GameObject SkyboxFader; 
     public string SceneToLoad;
 
+    //Becker Stuff End
 #if VZ_ARCADE || VZ_STREETVIEW
    public static VZServer Server { get; private set; }
 #endif
@@ -298,7 +299,7 @@ public class VZPlayer : MonoBehaviour
       else
          StartLevel();
 
-        //Becker Stuff
+        //Becker Stuff 2
 
         Terrains[0] = desertTrn[0];
         Terrains[1] = desertTrn[1];
@@ -309,7 +310,9 @@ public class VZPlayer : MonoBehaviour
         UntilNewLevel = LevelLength;
     }
 
-    //Becker Stuff
+    //Becker Stuff End
+
+    //Becker Stuff 3
 
     private void OnTriggerEnter(Collider other)
     {
@@ -327,38 +330,11 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLoc = new Vector3(0, 0, startZ);
             Vector3 spawnLocC = new Vector3(-5, 1.12f, startZ + 25f);
             int random = UnityEngine.Random.Range(0, 4);
-            int randomC = UnityEngine.Random.Range(1, 13);
+            int randomC = UnityEngine.Random.Range(0, 5);
             UntilNewLevel -= 1;
             Instantiate(Platforms[random], spawnLoc, Quaternion.identity);
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(90, 0, 0));
             Debug.Log(UntilNewLevel);
-           /* switch (random)
-            {
-                case 1:
-                    Instantiate(Platform1, spawnLoc, Quaternion.identity);
-
-                    break;
-                case 2:
-                    Instantiate(Platform2, spawnLoc, Quaternion.identity);
-
-                    break;
-
-                case 3:
-                    Instantiate(Platform3, spawnLoc, Quaternion.identity);
-
-                    break;
-                case 4:
-                    Instantiate(Platform4, spawnLoc, Quaternion.identity);
-
-                    break;
-
-
-
-            }*/
-
-         
-      
-
         }
 
 
@@ -393,6 +369,7 @@ public class VZPlayer : MonoBehaviour
         }
 
     }
+    //Becker Stuff End
 
     protected virtual void StartLevel()
    {
@@ -416,7 +393,7 @@ public class VZPlayer : MonoBehaviour
          UpdateNormal();
       }
 
-        //Becker Stuff
+        //Becker Stuff 4
 
         targetTime -= Time.deltaTime;
         if (targetTime <= 0.0f)
@@ -458,7 +435,7 @@ public class VZPlayer : MonoBehaviour
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
 
         }
-
+        //Becker Stuff End
 #if VZ_PLAYMAKER
       // Update PlayMaker variables.
 #if VZ_ARCADE
@@ -469,7 +446,7 @@ public class VZPlayer : MonoBehaviour
     }
 
 
-    //Becker stuff
+    //Becker stuff 5
     void loadNextLevelAssets()
     {
         Debug.Log("timer end");
@@ -488,6 +465,7 @@ public class VZPlayer : MonoBehaviour
 
         }
     }
+    //Becker Stuff End
 
     protected virtual void OnDestroy()
    {
