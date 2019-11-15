@@ -81,7 +81,7 @@ public class VZPlayer : MonoBehaviour
     public string StartingScene;
     public int LevelLength = 10;
     private int UntilNewLevel;
-    public GameObject SkyboxFader; 
+    public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public string SceneToLoad;
 
     //Becker Stuff End
@@ -396,6 +396,11 @@ public class VZPlayer : MonoBehaviour
         //Becker Stuff 4
 
         targetTime -= Time.deltaTime;
+
+        if (targetTime <= 100.0f)
+        {
+            Instantiate(NewSkybox, this.gameObject.transform.position, this.gameObject.transform.rotation); //Begins the skybox transition.
+        }
         if (targetTime <= 0.0f)
         {
             if (levelNo == 1)
@@ -426,7 +431,7 @@ public class VZPlayer : MonoBehaviour
         if (UntilNewLevel <= 0)
         {
             Debug.Log("Entered");
-            // Instantiate(SkyboxFader, this.transform.position, this.transform.rotation);
+            // Instantiate(SkyboxFader, this.transform.position, this.transform.rotation); //IMPORTANT: This is deprecated, and will likely be deleted, as scene changes will no longer occur.
             // SkyboxFade.SceneToBeLoaded = SceneToLoad; //Let's the skybox object's script know that this is the scene that will be activated.
             UntilNewLevel = LevelLength;  //Resets the level length;
             startZT += 500;

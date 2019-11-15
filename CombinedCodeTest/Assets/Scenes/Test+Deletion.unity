@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: SkyboxFader
       value: 
-      objectReference: {fileID: 7906911643276602267, guid: 3eb5a533043664f42854701caf7a908f,
+      objectReference: {fileID: 4517386243235483523, guid: c72d8bc661b0b12449bfc7c790faf1b1,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: SceneToLoad
@@ -402,6 +402,11 @@ PrefabInstance:
       propertyPath: Coins.Array.data[2]
       value: 
       objectReference: {fileID: 8314099418641033411, guid: 18f6da3fa7aff7c4b85be505a1dab8a2,
+        type: 3}
+    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
+      propertyPath: NewSkybox
+      value: 
+      objectReference: {fileID: 4517386243235483523, guid: c72d8bc661b0b12449bfc7c790faf1b1,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
@@ -675,6 +680,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
+        type: 3}
+      propertyPath: m_Name
+      value: Start Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -734,11 +744,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
-        type: 3}
-      propertyPath: m_Name
-      value: Start Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50455995ede93e649b389864f875df79, type: 3}
