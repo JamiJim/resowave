@@ -10,7 +10,7 @@ public class SceneUnloader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneToUnload = SkyboxFade.SceneToUnload;
+        //SceneToUnload = SkyboxFade.SceneToUnload;
         //Invoke("UnloadScene", 150f);
         Invoke("UnloadScene", 40f);
     }
