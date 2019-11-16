@@ -78,11 +78,12 @@ public class VZPlayer : MonoBehaviour
 
     public Transform StartPlatform;
 
-    public string StartingScene;
+    //public string StartingScene;
     public int LevelLength = 10;
     private int UntilNewLevel;
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
-    public string SceneToLoad;
+    //public string SceneToLoad;
+    public bool BeginTransition = false;
 
     //Becker Stuff End
 #if VZ_ARCADE || VZ_STREETVIEW
@@ -397,9 +398,10 @@ public class VZPlayer : MonoBehaviour
 
         targetTime -= Time.deltaTime;
 
-        if (targetTime <= 100.0f)
+        if (targetTime <= 100.0f && BeginTransition == false)
         {
             Instantiate(NewSkybox, this.gameObject.transform.position, this.gameObject.transform.rotation); //Begins the skybox transition.
+            BeginTransition = true; //This is necessary, or else the objects will keep appearing.
         }
         if (targetTime <= 0.0f)
         {
@@ -413,6 +415,7 @@ public class VZPlayer : MonoBehaviour
             }
             targetTime = 120.0f;
             loadNextLevelAssets();
+            BeginTransition = false; //Prepares the next transition for when it's ready.
         }
         if (Input.GetButtonDown("-"))
         {
