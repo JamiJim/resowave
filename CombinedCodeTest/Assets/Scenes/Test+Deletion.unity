@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: Platforms.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: Coins.Array.size
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: Platforms.Array.data[0]
       value: 
-      objectReference: {fileID: 8021143105206155111, guid: 76e427751ecf42a4e869bce4a4f1e7db,
+      objectReference: {fileID: 1000014039975744, guid: 04eee4fe2769ac148b271221ea1f7469,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: Platforms.Array.data[1]
@@ -401,8 +401,7 @@ PrefabInstance:
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: Coins.Array.data[2]
       value: 
-      objectReference: {fileID: 8314099418641033411, guid: 18f6da3fa7aff7c4b85be505a1dab8a2,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
       propertyPath: NewSkybox
       value: 
@@ -673,6 +672,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 500, y: 5, z: 1}
   m_Center: {x: 250, y: 0, z: 725}
+--- !u!1 &1452740569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100932, guid: 3820ddc41bffb9d47ab34f161e54123e,
+    type: 3}
+  m_PrefabInstance: {fileID: 245632120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1452740573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452740569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4619662ccf01c4e848ce95e227a667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1828835624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -680,6 +697,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
+        type: 3}
+      propertyPath: m_Name
+      value: Start Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -688,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7985060235165782967, guid: 50455995ede93e649b389864f875df79,
         type: 3}
@@ -739,16 +766,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
-        type: 3}
-      propertyPath: m_Name
-      value: Start Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582118226621025579, guid: 50455995ede93e649b389864f875df79,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7270542715851708064, guid: 50455995ede93e649b389864f875df79,
         type: 3}

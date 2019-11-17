@@ -327,13 +327,13 @@ public class VZPlayer : MonoBehaviour
 
         if (other.gameObject.CompareTag("SpawnPlatform"))
         {
-            startZ += 50f;
-            Vector3 spawnLoc = new Vector3(0, 0, startZ);
-            Vector3 spawnLocC = new Vector3(-5, 1.12f, startZ + 25f);
-            int random = UnityEngine.Random.Range(0, 4);
+            startZ += 25f;
+            Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
+            Vector3 spawnLocC = new Vector3(-5f, 0.8f, startZ + 25f);
+            //int random = UnityEngine.Random.Range(0, 4);
             int randomC = UnityEngine.Random.Range(0, 5);
             UntilNewLevel -= 1;
-            Instantiate(Platforms[random], spawnLoc, Quaternion.identity);
+            Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(90, 0, 0));
             Debug.Log(UntilNewLevel);
         }
@@ -367,6 +367,11 @@ public class VZPlayer : MonoBehaviour
         {
 
             Destroy(GameObject.Find("Platform 4(Clone)"));
+        }
+
+        if (other.gameObject.CompareTag("DeletePlatform"))
+        {
+            Destroy(GameObject.Find("Road(Clone)"));
         }
 
     }
