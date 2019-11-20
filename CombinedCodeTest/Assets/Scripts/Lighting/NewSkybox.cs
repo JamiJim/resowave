@@ -58,7 +58,9 @@ public class NewSkybox : MonoBehaviour
             RenderSettings.skybox = newSkybox; //Set the new level's skybox.
 
             //Prepare the new skybox for the next transition.
-            skyboxFade.SetFloat("_Blend", 1);
+
+            //******************************UNCOMMENT THIS ONCE TESTING IS DONE!*********************************
+            /*skyboxFade.SetFloat("_Blend", 1);
             {
                 skyboxFade.SetTexture("_FrontTex", skyboxFade.GetTexture("_FrontTex2"));
                 skyboxFade.SetTexture("_BackTex", skyboxFade.GetTexture("_BackTex2"));
@@ -66,7 +68,7 @@ public class NewSkybox : MonoBehaviour
                 skyboxFade.SetTexture("_DownTex", skyboxFade.GetTexture("_DownTex2"));
                 skyboxFade.SetTexture("_LeftTex", skyboxFade.GetTexture("_LeftTex2"));
                 skyboxFade.SetTexture("_RightTex", skyboxFade.GetTexture("_RightTex2"));
-            }
+            }*/
             
             Destroy(this.gameObject); //With all that done, destroy the object.
         }
