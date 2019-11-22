@@ -8,7 +8,7 @@ public class NewSkybox : MonoBehaviour
 
     //skyboxmaterial.SetFloat("_Blend", floatValue) <-----This is what is used to change the "blend" between the two skyboxes.
 
-    public float FadeSpeed = 0.3f;
+    public static float FadeSpeed = 0.3f;
     private float sbFade = 0; //This will be used to control how much the skybox fades between the first and second skybox. "0": Skybox 1 is fully opaque. "1": Skybox 2 is.
     
     public Material skyboxFade; //The fade material.
@@ -17,6 +17,13 @@ public class NewSkybox : MonoBehaviour
     public Cubemap NewLevelCubeMap; //The cubemap to be faded in.
     public Material newSkybox; //The new level's skybox.
 
+    public string NextLevel = "BigSand"; //Whatever the next level's name/theme is going to be.
+    public GameObject NextLevelLights;
+    public GameObject LastLevelLights;
+
+    private Light NextLevelLightsLights;
+    private Light LastLevelLightsLights;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +38,19 @@ public class NewSkybox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (sbFade == 0)
+        {
+            LastLevelLights = GameObject.Find("Directional Light");
+            LastLevelLightsLights = LastLevelLights.GetComponent<Light>();
+            if (NextLevel == "BigSand")
+            {
+                Instantiate(NextLevelLights, this.transform.position, this.transform.rotation);
+                //NextLevelLightsLights = NextLevelLights.GetComponent<Light>();
+            }
+            //NextLevelLightsLights.intensity = 0;
+            Debug.Log("THIS IS WORKING!!");
+        }
+
         sbFade += Time.deltaTime * FadeSpeed; //This is applied to the object constantly, until its deletion. It just controls the fading.
         skyboxFade.SetFloat("_Blend", sbFade); //This sets the fading to be constantly increasing, changing from the first skybox to the second skybox.
 
@@ -50,14 +69,19 @@ public class NewSkybox : MonoBehaviour
                 }
             }
         }
-        
+
+
+
+        //NextLevelLightsLights.intensity += Time.deltaTime * FadeSpeed;
+        LastLevelLightsLights.intensity -= Time.deltaTime * FadeSpeed;
+
         //Once the new Skybox has fully faded in, the object that creates it isn't needed anymore. It performs a few more operations before it deletes the object.
         if (sbFade >= 1)
         {
             RenderSettings.customReflection = NewLevelCubeMap; //Set the new level's cubemap.
             RenderSettings.skybox = newSkybox; //Set the new level's skybox.
-
-            //Prepare the new skybox for the next transition.
+            
+            /*//Prepare the new skybox for the next transition.
             skyboxFade.SetFloat("_Blend", 1);
             {
                 skyboxFade.SetTexture("_FrontTex", skyboxFade.GetTexture("_FrontTex2"));
@@ -66,7 +90,7 @@ public class NewSkybox : MonoBehaviour
                 skyboxFade.SetTexture("_DownTex", skyboxFade.GetTexture("_DownTex2"));
                 skyboxFade.SetTexture("_LeftTex", skyboxFade.GetTexture("_LeftTex2"));
                 skyboxFade.SetTexture("_RightTex", skyboxFade.GetTexture("_RightTex2"));
-            }
+            }*/
             
             Destroy(this.gameObject); //With all that done, destroy the object.
         }
