@@ -38,8 +38,7 @@ public class LightIntensity : MonoBehaviour
 
             if (ThisLight[i].intensity > Intensity[i])
             {
-                for (int y = 0; y < ThisLight.Length; y++)
-                    ThisLight[y].intensity = Intensity[y];
+               ThisLight[i].intensity = Intensity[i];
             }
         }
         
