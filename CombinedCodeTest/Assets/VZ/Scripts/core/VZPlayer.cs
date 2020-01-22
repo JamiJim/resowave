@@ -374,6 +374,11 @@ public class VZPlayer : MonoBehaviour
             Destroy(GameObject.Find("Road(Clone)"));
         }
 
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+        }
+
     }
     //Becker Stuff End
 
