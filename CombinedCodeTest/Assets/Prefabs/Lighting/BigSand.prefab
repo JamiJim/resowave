@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &373714155422579115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93913451005036806}
+  - component: {fileID: 5045740498134141301}
+  m_Layer: 0
+  m_Name: BigSand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &93913451005036806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373714155422579115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2639728, y: 5.864967, z: 14.835491}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5045740498134141301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373714155422579115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153476a90fddeaa419d7d5cc5957f754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: Big Sand
+  FrontTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  BackTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  UpTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  DownTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  LeftTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  RightTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  NewLevelCubeMapTransition:
+  - {fileID: 8900000, guid: 98238ab0f5fb0ff498a3a3953fa92786, type: 3}
+  - {fileID: 8900000, guid: 5b29bd8c2de5a0244989f1ef824d5755, type: 3}
+  - {fileID: 8900000, guid: a650175363076f646b150acf1f1e4abc, type: 3}
+  - {fileID: 8900000, guid: 7033bbca4a4c2064eaf4a2d103d90aaa, type: 3}
+  - {fileID: 8900000, guid: cd079bdcb295da246b38ede0d9525ac6, type: 3}
+  FinalCubeMap: {fileID: 8900000, guid: f64aafc491059374da52c0e5c9b00fb2, type: 3}
+  Lights: {fileID: 4634376671163831587, guid: e0d60bd92b7be1f439c2ab8e7831303a, type: 3}

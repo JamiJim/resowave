@@ -68,6 +68,8 @@ public class PlayerScript : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(StartingScene));
         UntilNewLevel = LevelLength;
 
+        //The NextLevel ID should be at 0 at the start of the game. This gets modified by other scripts as the game continues.
+        NewSkybox.NextLevel = 0;
     }
 
 

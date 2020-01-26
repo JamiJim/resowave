@@ -10,88 +10,93 @@ public class NewSkybox : MonoBehaviour
 
     public static float FadeSpeed = 0.3f;
     private float sbFade = 0; //This will be used to control how much the skybox fades between the first and second skybox. "0": Skybox 1 is fully opaque. "1": Skybox 2 is.
-    
+
     public Material skyboxFade; //The fade material.
 
-    public Cubemap[] NewLevelCubeMapTransition; //Specify the number of Cubemap Transitions in the editor, then supply them. The functions below do the rest!
-    public Cubemap NewLevelCubeMap; //The cubemap to be faded in.
-    public Material newSkybox; //The new level's skybox.
-
-    public string NextLevel = "BigSand"; //Whatever the next level's name/theme is going to be.
-    public GameObject NextLevelLights;
+    public static int NextLevel = 0; //The ID, or order of the levels. It's numbered so that they can be changed nonspecifically.
     public GameObject LastLevelLights;
 
-    private Light NextLevelLightsLights;
-    private Light LastLevelLightsLights;
-    
+    private Light[] LastLevelLightsLights; //The lights of the LastLevelLights Game Object. Literally the "Last Level's Light Object's Lights."
+
+    public LevelSkyboxes[] SkyboxList; //This is a group of skyboxes.
+
     // Start is called before the first frame update
     void Start()
     {
+        //If the Level ID is at its end, it needs to cycle back to the start of the level list.
+        if (SkyboxList.Length == NextLevel)
+        {
+            NextLevel = 0;
+            Debug.Log("Resetting The Skybox Cycle!");
+        }
+
         RenderSettings.skybox = skyboxFade; //The skybox fade begins.
         sbFade = 0; //In case it isn't sets the sbFade value to 0.
         skyboxFade.SetFloat("_Blend", sbFade); //This function sets the skybox to how much the skybox should blend between the two, from 0-1.
 
-        //Once new levels are added, there will likely need to be another script or function that sets "NewLevelCubeMap," and all of the transitions,
-        //depending on what level they're currently in, or whatever factor we go with.
+        LastLevelLights = GameObject.FindGameObjectWithTag("LevelLight");
+        LastLevelLightsLights = LastLevelLights.GetComponentsInChildren<Light>();
+
+        //Prepares the Fade Effect for the New Level's Skybox.
+        skyboxFade.SetTexture("_FrontTex2", SkyboxList[NextLevel].FrontTex);
+        skyboxFade.SetTexture("_BackTex2", SkyboxList[NextLevel].BackTex);
+        skyboxFade.SetTexture("_UpTex2", SkyboxList[NextLevel].UpTex);
+        skyboxFade.SetTexture("_DownTex2", SkyboxList[NextLevel].DownTex);
+        skyboxFade.SetTexture("_LeftTex2", SkyboxList[NextLevel].LeftTex);
+        skyboxFade.SetTexture("_RightTex2", SkyboxList[NextLevel].RightTex);
+
+        //The lights used by the new skybox go here.
+        Instantiate(SkyboxList[NextLevel].Lights, this.transform.position, this.transform.rotation);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        if (sbFade == 0)
+
+        //Fade out the old lights.
+        foreach (Light light in LastLevelLightsLights)
         {
-            LastLevelLights = GameObject.Find("Directional Light");
-            LastLevelLightsLights = LastLevelLights.GetComponent<Light>();
-            if (NextLevel == "BigSand")
-            {
-                Instantiate(NextLevelLights, this.transform.position, this.transform.rotation);
-                //NextLevelLightsLights = NextLevelLights.GetComponent<Light>();
-            }
-            //NextLevelLightsLights.intensity = 0;
-            Debug.Log("THIS IS WORKING!!");
+            light.intensity -= Time.deltaTime * FadeSpeed;
         }
+
+        //This part here is likely redundant, as I realized that all the necessary options could've just been put in Start().
+        /*if (sbFade == 0)
+        {
+            
+        }*/
 
         sbFade += Time.deltaTime * FadeSpeed; //This is applied to the object constantly, until its deletion. It just controls the fading.
         skyboxFade.SetFloat("_Blend", sbFade); //This sets the fading to be constantly increasing, changing from the first skybox to the second skybox.
 
         //The Cubemap Transitions need to exist for this to work, so it won't do it if they don't exist.
-        if (NewLevelCubeMapTransition.Length > 0)
+        if (SkyboxList[NextLevel].NewLevelCubeMapTransition.Length > 0)
         {
             //Depending on how big NewLevelCubeMapTransition is, this is applied a different number of times.
-            for (int i = 0; i < NewLevelCubeMapTransition.Length; i++)
+            for (int i = 0; i < SkyboxList[NextLevel].NewLevelCubeMapTransition.Length; i++)
             {
                 //This, in essence, creates the transitions from one cubemap to the next, and how many times it does it increases as more cubemaps are supplied.
-                if (sbFade >= (i * 1.0f) / NewLevelCubeMapTransition.Length && sbFade < (i + 1.0f) / NewLevelCubeMapTransition.Length && sbFade < 1)
+                if (sbFade >= (i * 1.0f) / SkyboxList[NextLevel].NewLevelCubeMapTransition.Length && sbFade < (i + 1.0f) / SkyboxList[NextLevel].NewLevelCubeMapTransition.Length && sbFade < 1)
                 {
-                    RenderSettings.customReflection = NewLevelCubeMapTransition[i]; //Then, set the cubemap to the one supplied at position 'i.'
+                    RenderSettings.customReflection = SkyboxList[NextLevel].NewLevelCubeMapTransition[i]; //Then, set the cubemap to the one supplied at position 'i.'
                     //Debug.Log((i * 1.0f) / NewLevelCubeMapTransition.Length); //Use these if something for some reason goes wrong.
                     //Debug.Log(RenderSettings.customReflection);
                 }
             }
         }
 
-
-
-        //NextLevelLightsLights.intensity += Time.deltaTime * FadeSpeed;
-        LastLevelLightsLights.intensity -= Time.deltaTime * FadeSpeed;
-
         //Once the new Skybox has fully faded in, the object that creates it isn't needed anymore. It performs a few more operations before it deletes the object.
         if (sbFade >= 1)
         {
-            RenderSettings.customReflection = NewLevelCubeMap; //Set the new level's cubemap.
-            RenderSettings.skybox = newSkybox; //Set the new level's skybox.
-            
-            /*//Prepare the new skybox for the next transition.
-            skyboxFade.SetFloat("_Blend", 1);
-            {
-                skyboxFade.SetTexture("_FrontTex", skyboxFade.GetTexture("_FrontTex2"));
-                skyboxFade.SetTexture("_BackTex", skyboxFade.GetTexture("_BackTex2"));
-                skyboxFade.SetTexture("_UpTex", skyboxFade.GetTexture("_UpTex2"));
-                skyboxFade.SetTexture("_DownTex", skyboxFade.GetTexture("_DownTex2"));
-                skyboxFade.SetTexture("_LeftTex", skyboxFade.GetTexture("_LeftTex2"));
-                skyboxFade.SetTexture("_RightTex", skyboxFade.GetTexture("_RightTex2"));
-            }*/
-            
+            RenderSettings.customReflection = SkyboxList[NextLevel].FinalCubeMap; //Set the new level's cubemap.
+            skyboxFade.SetTexture("_FrontTex", skyboxFade.GetTexture("_FrontTex2"));
+            skyboxFade.SetTexture("_BackTex", skyboxFade.GetTexture("_BackTex2"));
+            skyboxFade.SetTexture("_UpTex", skyboxFade.GetTexture("_UpTex2"));
+            skyboxFade.SetTexture("_DownTex", skyboxFade.GetTexture("_DownTex2"));
+            skyboxFade.SetTexture("_LeftTex", skyboxFade.GetTexture("_LeftTex2"));
+            skyboxFade.SetTexture("_RightTex", skyboxFade.GetTexture("_RightTex2"));
+            skyboxFade.SetFloat("_Blend", 0); //Sets up the skybox for the next transition, whenever that may be.
+            NextLevel += 1; //Get the next level in the list set up for when the level changes again.
+            Destroy(LastLevelLights); //With the old lights out of view, remove them from the scene.
             Destroy(this.gameObject); //With all that done, destroy the object.
         }
     }

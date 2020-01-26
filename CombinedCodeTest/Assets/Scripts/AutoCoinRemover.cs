@@ -15,7 +15,7 @@ public class AutoCoinRemover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(DeletTime);
+        //Debug.Log(DeletTime);
         DeletTime -= Time.deltaTime;
 
         if (DeletTime <= 0.0f)
