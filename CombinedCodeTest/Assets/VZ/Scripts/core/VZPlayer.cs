@@ -78,12 +78,11 @@ public class VZPlayer : MonoBehaviour
 
     public Transform StartPlatform;
 
-    //public string StartingScene;
     public int LevelLength = 10;
-    private int UntilNewLevel;
+    private int UntilNewLevel; //Do we still need this here?
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
-    //public string SceneToLoad;
     public bool BeginTransition = false;
+    public static int Score = 0;
 
     //Becker Stuff End
 #if VZ_ARCADE || VZ_STREETVIEW
@@ -301,13 +300,12 @@ public class VZPlayer : MonoBehaviour
          StartLevel();
 
         //Becker Stuff 2
-
+        Score = 0;
         Terrains[0] = desertTrn[0];
         Terrains[1] = desertTrn[1];
         Terrains[2] = desertTrn[2];
         Terrains[3] = desertTrn[3];
         startZ = StartPlatform.position.z;
-       // SceneManager.SetActiveScene(SceneManager.GetSceneByName(StartingScene));
         UntilNewLevel = LevelLength;
     }
 
@@ -332,7 +330,7 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLocC = new Vector3(-5f, 0.8f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
             int randomC = UnityEngine.Random.Range(0, 5);
-            UntilNewLevel -= 1;
+            UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(90, 0, 0));
             Debug.Log(UntilNewLevel);
@@ -377,8 +375,8 @@ public class VZPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            Score += 1;
         }
-
     }
     //Becker Stuff End
 
@@ -440,12 +438,11 @@ public class VZPlayer : MonoBehaviour
         }
         //Debug.Log("Speed: " + speed);
 
-        //Moving the character
+        //************IMPORTANT!!!****************
+        //Didn't we change levels to work on a timer, rather than distance? Do we still need this here?
         if (UntilNewLevel <= 0)
         {
             Debug.Log("Entered");
-            // Instantiate(SkyboxFader, this.transform.position, this.transform.rotation); //IMPORTANT: This is deprecated, and will likely be deleted, as scene changes will no longer occur.
-            // SkyboxFade.SceneToBeLoaded = SceneToLoad; //Let's the skybox object's script know that this is the scene that will be activated.
             UntilNewLevel = LevelLength;  //Resets the level length;
             startZT += 500;
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);

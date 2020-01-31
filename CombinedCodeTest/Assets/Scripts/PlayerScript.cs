@@ -46,13 +46,14 @@ public class PlayerScript : MonoBehaviour
     public string StartingScene;
     public int LevelLength = 10;
     private int UntilNewLevel;
-    public GameObject SkyboxFader; //The skybox transition object should be selected.
-    public string SceneToLoad; //Specify the name of the scene you're going to load, and eventually activate once the the skybox begins to fade out;
+    //public GameObject SkyboxFader; //The skybox transition object should be selected.
+   // public string SceneToLoad; //Specify the name of the scene you're going to load, and eventually activate once the the skybox begins to fade out;
+    public static int Score = 0;
 
 
     private void Awake()
     {
-        SceneManager.LoadScene(StartingScene, LoadSceneMode.Additive); //"Additive" is required for loading scenes with other scenes.
+        //SceneManager.LoadScene(StartingScene, LoadSceneMode.Additive); //"Additive" is required for loading scenes with other scenes.
     }
 
     void Start()
@@ -65,11 +66,11 @@ public class PlayerScript : MonoBehaviour
         Terrains[3] = desertTrn[3];
         Controller = GetComponent<CharacterController>();
         startZ = StartPlatform.position.z;
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(StartingScene));
-        UntilNewLevel = LevelLength;
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(StartingScene));
+       // UntilNewLevel = LevelLength;
 
         //The NextLevel ID should be at 0 at the start of the game. This gets modified by other scripts as the game continues.
-        NewSkybox.NextLevel = 0;
+        //NewSkybox.NextLevel = 0;
     }
 
 
