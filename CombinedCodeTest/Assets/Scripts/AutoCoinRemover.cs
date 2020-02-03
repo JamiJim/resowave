@@ -20,7 +20,7 @@ public class AutoCoinRemover : MonoBehaviour
 
         if (DeletTime <= 0.0f)
         {
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 20);
             Debug.Log("Deleted");
         }
     }

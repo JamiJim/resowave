@@ -325,7 +325,7 @@ public class VZPlayer : MonoBehaviour
 
         if (other.gameObject.CompareTag("SpawnPlatform"))
         {
-            startZ += 25f;
+            startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
             Vector3 spawnLocC = new Vector3(-5f, 0.8f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
