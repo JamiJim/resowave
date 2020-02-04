@@ -82,7 +82,7 @@ public class VZPlayer : MonoBehaviour
     private int UntilNewLevel; //Do we still need this here?
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public bool BeginTransition = false;
-    public static int Score = 0;
+    public   int Score = 0;
 
     //Becker Stuff End
 #if VZ_ARCADE || VZ_STREETVIEW
@@ -327,12 +327,12 @@ public class VZPlayer : MonoBehaviour
         {
             startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
-            Vector3 spawnLocC = new Vector3(-5f, 0.8f, startZ + 25f);
+            Vector3 spawnLocC = new Vector3(13f, 15f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
             int randomC = UnityEngine.Random.Range(0, 5);
             UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
-            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(90, 0, 0));
+            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 0, 0));
             Debug.Log(UntilNewLevel);
         }
 
@@ -376,6 +376,32 @@ public class VZPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             Score += 1;
+        }
+
+        if (other.gameObject.CompareTag("2Bit"))
+        {
+            Destroy(other.gameObject);
+            Score += 2;
+        }
+        if (other.gameObject.CompareTag("4Bit"))
+        {
+            Destroy(other.gameObject);
+            Score += 4;
+        }
+        if (other.gameObject.CompareTag("8Bit"))
+        {
+            Destroy(other.gameObject);
+            Score += 8;
+        }
+        if (other.gameObject.CompareTag("16Bit"))
+        {
+            Destroy(other.gameObject);
+            Score += 16;
+        }
+        if (other.gameObject.CompareTag("32Bit"))
+        {
+            Destroy(other.gameObject);
+            Score += 32;
         }
     }
     //Becker Stuff End

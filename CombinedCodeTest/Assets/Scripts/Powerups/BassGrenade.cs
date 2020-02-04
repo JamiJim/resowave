@@ -28,7 +28,7 @@ public class BassGrenade : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
-            VZPlayer.Score += 1; //Need to implement a "Coin Collection" script that properly takes into account coin score amounts.
+            //VZPlayer.Score += 1; //Need to implement a "Coin Collection" script that properly takes into account coin score amounts.
         }
     }
 }
