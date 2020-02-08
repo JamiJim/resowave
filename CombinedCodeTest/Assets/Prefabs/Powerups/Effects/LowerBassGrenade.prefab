@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0510da7b3809d94478e8a6a4f562366e, type: 2}
+  - {fileID: 2100000, guid: 5d94ec31f047b194ca0ce45fe355aaed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthSpeed: 60
-  MaxSize: 60
+  MaxSize: 120
+  Effect: {fileID: 2100000, guid: 3e65021ac9829bf4db3260259c9d4f61, type: 2}
+  Skybox: {fileID: 2100000, guid: 81781ad5cd43cb54a9771447748b3d9a, type: 2}
 --- !u!54 &8874964741204392040
 Rigidbody:
   m_ObjectHideFlags: 0

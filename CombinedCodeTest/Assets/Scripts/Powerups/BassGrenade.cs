@@ -6,11 +6,15 @@ public class BassGrenade : MonoBehaviour
 {
     public float GrowthSpeed = 3;
     public int MaxSize = 30;
+    private VZPlayer score;
+    public Material Effect;
+    public Material Skybox;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
+        RenderSettings.skybox = Effect;
     }
 
     // Update is called once per frame
@@ -19,16 +23,37 @@ public class BassGrenade : MonoBehaviour
         this.transform.localScale += new Vector3(1,1,1) * GrowthSpeed * Time.deltaTime;
         if (transform.localScale.x >= MaxSize) //Since everything scales uniformly, this works fine.
         {
+            RenderSettings.skybox = Skybox;
             Destroy(this.gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("2Bit"))
         {
             Destroy(other.gameObject);
-            //VZPlayer.Score += 1; //Need to implement a "Coin Collection" script that properly takes into account coin score amounts.
+            score.Score += 2;
+        }
+        if (other.gameObject.CompareTag("4Bit"))
+        {
+            Destroy(other.gameObject);
+            score.Score += 4;
+        }
+        if (other.gameObject.CompareTag("8Bit"))
+        {
+            Destroy(other.gameObject);
+            score.Score += 8;
+        }
+        if (other.gameObject.CompareTag("16Bit"))
+        {
+            Destroy(other.gameObject);
+            score.Score += 16;
+        }
+        if (other.gameObject.CompareTag("32Bit"))
+        {
+            Destroy(other.gameObject);
+            score.Score += 32;
         }
     }
 }

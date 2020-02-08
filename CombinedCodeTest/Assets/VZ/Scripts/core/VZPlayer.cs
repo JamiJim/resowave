@@ -342,7 +342,7 @@ public class VZPlayer : MonoBehaviour
         //Once you enter the "Delete Trigger" (that is at the end of each platform)
         //Destroy a gameobject with this name after 9 seconds.
 
-        if (other.gameObject.CompareTag("DeletePlatformGreen"))
+        /*if (other.gameObject.CompareTag("DeletePlatformGreen"))
         {
             Destroy(GameObject.Find("Platform 1(Clone)"));
 
@@ -365,18 +365,18 @@ public class VZPlayer : MonoBehaviour
         {
 
             Destroy(GameObject.Find("Platform 4(Clone)"));
-        }
+        }*/
 
         if (other.gameObject.CompareTag("DeletePlatform"))
         {
-            Destroy(GameObject.Find("Road(Clone)"));
+            Destroy(GameObject.Find("Road(Clone)"), 3f);
         }
 
-        if (other.gameObject.CompareTag("Coin"))
+        /*if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
             Score += 1;
-        }
+        }*/
 
         if (other.gameObject.CompareTag("2Bit"))
         {
