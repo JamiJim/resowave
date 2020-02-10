@@ -327,12 +327,12 @@ public class VZPlayer : MonoBehaviour
         {
             startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
-            Vector3 spawnLocC = new Vector3(13f, 15f, startZ + 25f);
+            Vector3 spawnLocC = new Vector3(-0.26f, 0.33f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
             int randomC = UnityEngine.Random.Range(0, 5);
             UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
-            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 0, 0));
+            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 90, 0));
             Debug.Log(UntilNewLevel);
         }
 
