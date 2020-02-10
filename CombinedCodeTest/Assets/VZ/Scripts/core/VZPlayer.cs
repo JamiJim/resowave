@@ -329,7 +329,7 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
             Vector3 spawnLocC = new Vector3(-0.26f, 0.33f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
-            int randomC = UnityEngine.Random.Range(0, 5);
+            int randomC = UnityEngine.Random.Range(0, 14);
             UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 90, 0));
@@ -369,7 +369,7 @@ public class VZPlayer : MonoBehaviour
 
         if (other.gameObject.CompareTag("DeletePlatform"))
         {
-            Destroy(GameObject.Find("Road(Clone)"), 3f);
+            Destroy(GameObject.Find("Road(Clone)"), 0f);
         }
 
         /*if (other.gameObject.CompareTag("Coin"))
