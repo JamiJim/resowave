@@ -15,14 +15,13 @@ public class AntivirusAttack : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Virus"))
         {
             Virus = GameObject.FindGameObjectsWithTag("Virus"); //The virus being targeted.
-            target = Virus[Virus.Length - ListDeduction].transform.position; //Since the objects loaded first are FOUND last, this whole process will need to be done from the back of the list, working to the front.
+        //    target = Virus[Virus.Length - ListDeduction].transform.position; //Since the objects loaded first are FOUND last, this whole process will need to be done from the back of the list, working to the front.
         }
         else
         {
             Destroy(this.gameObject); //If it cannot find any/another virus to attack, it is done.
         }
     }
-
 
     private void Start()
     {
@@ -31,7 +30,12 @@ public class AntivirusAttack : MonoBehaviour
 
     private void Update()
     {
-        this.gameObject.transform.position = (Vector3.MoveTowards(this.transform.position, target, Time.deltaTime * Speed));
+        this.gameObject.transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        if (ListDeduction == (Virus.Length + 1))
+        {
+            Destroy(this.gameObject); //If there are no more viruses to target, destroy this object.
+        }
+        //this.gameObject.transform.position = (Vector3.MoveTowards(this.transform.position, target, Time.deltaTime * Speed)); The old move code.
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,14 +44,7 @@ public class AntivirusAttack : MonoBehaviour
         {
             Destroy(other.gameObject);
             ListDeduction += 1;
-            if (ListDeduction == (Virus.Length + 1))
-            {
-                Destroy(this.gameObject); //If there are no more viruses to target, destroy this object.
-            }
-            else
-            {
-                target = Virus[Virus.Length - ListDeduction].transform.position; //Otherwise, move to the next item in the list, working backwards.
-            }
+            //target = Virus[Virus.Length - ListDeduction].transform.position; //Move to the next item in the list, working backwards.
         }
     }
 }

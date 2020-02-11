@@ -83,6 +83,7 @@ public class VZPlayer : MonoBehaviour
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public bool BeginTransition = false;
     public   int Score = 0;
+    public int VirusDecrement = 16; //The amount of points the player loses if they touch a virus.
 
     //Becker Stuff End
 #if VZ_ARCADE || VZ_STREETVIEW
@@ -329,7 +330,7 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
             Vector3 spawnLocC = new Vector3(-0.26f, 0.33f, startZ + 25f);
             //int random = UnityEngine.Random.Range(0, 4);
-            int randomC = UnityEngine.Random.Range(0, 14);
+            int randomC = UnityEngine.Random.Range(0, Coins.Length);
             UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 90, 0));
@@ -402,6 +403,18 @@ public class VZPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             Score += 32;
+        }
+        if (other.gameObject.CompareTag("Virus"))
+        {
+            if (Score < VirusDecrement)
+            {
+                Score = 0;
+            }
+            else
+            {
+                Score -= VirusDecrement;
+            }
+            Destroy(other.gameObject);
         }
     }
     //Becker Stuff End

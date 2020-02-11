@@ -14,7 +14,7 @@ public class NewSkybox : MonoBehaviour
     public Material skyboxFade; //The fade material.
 
     public static int NextLevel = 0; //The ID, or order of the levels. It's numbered so that they can be changed nonspecifically.
-    public GameObject LastLevelLights;
+    private GameObject LastLevelLights;
 
     private Light[] LastLevelLightsLights; //The lights of the LastLevelLights Game Object. Literally the "Last Level's Light Object's Lights."
 
