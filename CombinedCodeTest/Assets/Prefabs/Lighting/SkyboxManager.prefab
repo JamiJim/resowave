@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4517386243235483521}
   - component: {fileID: 4517386243235483520}
   m_Layer: 0
-  m_Name: NewSkybox
+  m_Name: SkyboxManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxFade: {fileID: 2100000, guid: 81781ad5cd43cb54a9771447748b3d9a, type: 2}
-  LastLevelLights: {fileID: 0}
   SkyboxList:
   - {fileID: 1748890264927425459, guid: 71999aa3d46172540b66183c9022fffb, type: 3}
