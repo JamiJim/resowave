@@ -58,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -108,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effect: {fileID: 5386832427533445225, guid: 03a4aa0c9dd3d6040ae40828b991b7da, type: 3}
-  MultiplesAllowed: 0
-  SingularTag: Antivirus
+  MultiplesAllowed: 1
+  SingularTag: 
 --- !u!54 &4782942911954922580
 Rigidbody:
   m_ObjectHideFlags: 0

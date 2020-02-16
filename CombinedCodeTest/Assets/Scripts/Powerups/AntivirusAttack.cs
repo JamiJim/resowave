@@ -5,37 +5,38 @@ using UnityEngine;
 public class AntivirusAttack : MonoBehaviour
 {
     public float Speed;
+    public float LifeTime = 4f; //How long the object exists before it starts to disappear.
+    public float ScaleSpeed = 16f; //The speed at which the object disappears.
     private Vector3 target;
     private GameObject[] Virus;
     private int ListDeduction = 1;
 
-    //Find a Virus, and set that as the virus to target.
-    private void TargetVirus()
-    {
-        if (GameObject.FindGameObjectWithTag("Virus"))
-        {
-            Virus = GameObject.FindGameObjectsWithTag("Virus"); //The virus being targeted.
-        //    target = Virus[Virus.Length - ListDeduction].transform.position; //Since the objects loaded first are FOUND last, this whole process will need to be done from the back of the list, working to the front.
-        }
-        else
-        {
-            Destroy(this.gameObject); //If it cannot find any/another virus to attack, it is done.
-        }
-    }
-
-    private void Start()
-    {
-        TargetVirus();
-    }
+    //Controls the Up-And-Down Movement of the Object. (SinY)
+    public float HeightMinMax = 3; //How far up and down the object will move.
+    public float modSpeed = 8; //How fast the object moves up and down.
+    private float sinModifier = 0; //This what gives the object its slow movement, up and down.
 
     private void Update()
     {
+        LifeTime -= Time.deltaTime; //The lifetime ticks down.
+
+        //This is for the up-and-down movement.
+        sinModifier += Time.deltaTime * modSpeed;
+        this.transform.Translate(Vector3.up * Time.deltaTime * HeightMinMax * Mathf.Sin(sinModifier));
+
+        //This is what makes it move along the track.
         this.gameObject.transform.Translate(Vector3.forward * Time.deltaTime * Speed);
-        if (ListDeduction == (Virus.Length + 1))
+        
+
+        if (LifeTime <= 0)
         {
-            Destroy(this.gameObject); //If there are no more viruses to target, destroy this object.
+            this.gameObject.transform.localScale -= (new Vector3(1, 0, 0) * Time.deltaTime * ScaleSpeed);
+            this.gameObject.transform.localScale += (Vector3.up * Time.deltaTime * ScaleSpeed);
+            if (this.gameObject.transform.localScale.x <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
-        //this.gameObject.transform.position = (Vector3.MoveTowards(this.transform.position, target, Time.deltaTime * Speed)); The old move code.
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,8 +44,6 @@ public class AntivirusAttack : MonoBehaviour
         if (other.CompareTag("Virus"))
         {
             Destroy(other.gameObject);
-            ListDeduction += 1;
-            //target = Virus[Virus.Length - ListDeduction].transform.position; //Move to the next item in the list, working backwards.
         }
     }
 }

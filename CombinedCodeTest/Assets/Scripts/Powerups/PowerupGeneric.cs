@@ -19,6 +19,7 @@ public class PowerupGeneric : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //Currently, every Powerup can work in multiples, and was from an earlier version. It remains here in case such a mechanic is needed again.
             if (MultiplesAllowed == false) //Can more than one of this powerup effect be onscreen at once?
             {
                 if (GameObject.FindGameObjectWithTag(SingularTag)) //If not, check to see if there IS already one onscreen.
