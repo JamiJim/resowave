@@ -105,7 +105,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8d1b8627bb4ba26428c906143d3a1b12,
         type: 3}
       propertyPath: m_Name
-      value: Floppy_16bit Variant (1)
+      value: Floppy_16bit Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8d1b8627bb4ba26428c906143d3a1b12,
         type: 3}
@@ -114,9 +114,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856365191234717131, guid: 8d1b8627bb4ba26428c906143d3a1b12,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 856365191234717131, guid: 8d1b8627bb4ba26428c906143d3a1b12,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 41371ec8934b91b42a752c342d76b74d, type: 2}
+    - target: {fileID: 856365191234717131, guid: 8d1b8627bb4ba26428c906143d3a1b12,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1abc611899a1a454fa8cd391644be439, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d1b8627bb4ba26428c906143d3a1b12, type: 3}
 --- !u!1 &2701236595943675744 stripped

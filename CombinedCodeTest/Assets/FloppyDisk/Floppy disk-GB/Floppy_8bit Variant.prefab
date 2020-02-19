@@ -105,7 +105,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_Name
-      value: Floppy_8bit Variant (5)
+      value: Floppy_8bit Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
@@ -114,9 +114,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5239efd479ad15a4bb5bf74daa9686ec, type: 2}
+    - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f504d004eeb556a4192a79bbeccd2695, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b927bdd2887ea314689789f2db577f7e, type: 3}
 --- !u!1 &4998609460407808212 stripped
