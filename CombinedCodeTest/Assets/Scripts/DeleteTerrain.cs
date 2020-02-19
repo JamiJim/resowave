@@ -6,12 +6,11 @@ public class DeleteTerrain : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject,0.1f);
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject, 0.1f);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
