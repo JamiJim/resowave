@@ -9,22 +9,19 @@ public class AutoCoinRemover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Delete", 15f);
+        
     }
 
     // Update is called once per frame
-    void Delete()
+    void Update()
     {
-        for(int i = 0; i < 16; i++)
-        {
-            DeletTime -= i;
-        }
-        
+        //Debug.Log(DeletTime);
+        DeletTime -= Time.deltaTime;
 
         if (DeletTime <= 0.0f)
         {
-            Destroy(gameObject, 15);
-            //Debug.Log("Deleted");
+            Destroy(gameObject, 2);
+            Debug.Log("Deleted");
         }
     }
 }
