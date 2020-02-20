@@ -25,6 +25,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c14dbaf9b7af141b952a634dfac03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &1136392253360301062
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328320594405827179}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &8470548548236726520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35,7 +50,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c7b3761b4b56d5c4185424be0d3cbf86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c7b3761b4b56d5c4185424be0d3cbf86,
         type: 3}
@@ -80,7 +95,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c7b3761b4b56d5c4185424be0d3cbf86,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 97.4925
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c7b3761b4b56d5c4185424be0d3cbf86,
         type: 3}
@@ -132,6 +147,12 @@ PrefabInstance:
 --- !u!1 &480902269619309041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c7b3761b4b56d5c4185424be0d3cbf86,
+    type: 3}
+  m_PrefabInstance: {fileID: 8470548548236726520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7328320594405827179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8052994932809076077, guid: c7b3761b4b56d5c4185424be0d3cbf86,
     type: 3}
   m_PrefabInstance: {fileID: 8470548548236726520}
   m_PrefabAsset: {fileID: 0}
