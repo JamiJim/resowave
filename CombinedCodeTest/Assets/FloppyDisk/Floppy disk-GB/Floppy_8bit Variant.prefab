@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &8884459757084248760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998609460407808212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.93, y: 4.74, z: 1}
+  m_Center: {x: 0, y: 2.11, z: 0}
+--- !u!114 &3081763820147974924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4998609460407808212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c14dbaf9b7af141b952a634dfac03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3926942905986247133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,20 +32,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
-        type: 3}
-      propertyPath: m_Name
-      value: Floppy_8bit Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
-        type: 3}
-      propertyPath: m_TagString
-      value: 8Bit
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
@@ -30,12 +45,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
@@ -45,7 +60,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
@@ -75,7 +90,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.125
+      value: 0.12500018
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
@@ -85,12 +100,38 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.125
+      value: 0.12500018
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
+      propertyPath: m_Name
+      value: Floppy_8bit Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
+      propertyPath: m_TagString
+      value: 8Bit
+      objectReference: {fileID: 0}
+    - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5239efd479ad15a4bb5bf74daa9686ec, type: 2}
+    - target: {fileID: 856365191234717131, guid: b927bdd2887ea314689789f2db577f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f504d004eeb556a4192a79bbeccd2695, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b927bdd2887ea314689789f2db577f7e, type: 3}
+--- !u!1 &4998609460407808212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: b927bdd2887ea314689789f2db577f7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3926942905986247133}
+  m_PrefabAsset: {fileID: 0}
