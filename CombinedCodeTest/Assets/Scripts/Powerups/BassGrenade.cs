@@ -23,10 +23,26 @@ public class BassGrenade : MonoBehaviour
         this.transform.localScale += new Vector3(1,1,1) * GrowthSpeed * Time.deltaTime;
         if (transform.localScale.x >= MaxSize) //Since everything scales uniformly, this works fine.
         {
-            RenderSettings.skybox = Skybox;
+            CheckForMultiples(); //This affects whether the skybox changes back or not.
             Destroy(this.gameObject);
         }
     }
+
+    //If there are multiple bass grenades active by the time the effect is supposed to disappear, it doesn't change the skybox back (so that the last one to disappear can do that instead).
+    void CheckForMultiples()
+    {
+        GameObject[] BassGrenades = GameObject.FindGameObjectsWithTag("BassGrenade");
+        //Debug.Log(BassGrenades.Length);
+        if (BassGrenades.Length <= 1)
+        {
+            RenderSettings.skybox = Skybox;
+        }
+        else
+        {
+            //Debug.Log("There's multiple Bass Grenades going off! Not gonna change the skybox back!");
+        }
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

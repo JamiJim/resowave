@@ -18,14 +18,14 @@ public class speedometerneedle : MonoBehaviour
     void Update()
     {
         speed = gm.Speed() * -10;
-         Debug.Log("Speed " + speed );
+         //Debug.Log("Speed " + speed );
         if (speed < -90) { speed = -90; }
         else if (speed > -90)
         {
             speed = gm.Speed() * -10;
         }
             needle.transform.rotation=Quaternion.Euler(0,0,speed+50);
-            Debug.Log("rotation:  "+needle.transform.rotation+" Speed: "+speed);
+            //Debug.Log("rotation:  "+needle.transform.rotation+" Speed: "+speed);
         
     }
 }
