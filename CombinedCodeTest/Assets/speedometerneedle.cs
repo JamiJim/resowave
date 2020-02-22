@@ -11,14 +11,14 @@ public class speedometerneedle : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
-        speed = gm.Speed() * -10;
+        //speed = gm.Speed() * -10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*peed = gm.Speed();
-         Debug.Log("Speed " + speed );*/
+        speed = gm.Speed() * -10;
+         Debug.Log("Speed " + speed );
         if (speed < -90) { speed = -90; }
         else if (speed > -90)
         {
