@@ -7,11 +7,13 @@ public class PowerupGeneric : MonoBehaviour
     public GameObject Effect;
     public bool MultiplesAllowed = true; //If multiples of the powerup can be onscreen at once, set this to true.
     public string SingularTag; //Specify the tag name of the Powerup that is to be limited to 1 on-screen. Ignore this if MultiplesAllowed is set to true.
-
+    //public AudioSource aSource;
+    //public AudioClip aSound;
 
     private void PowerupEffect() //What normally happens when the powerup is collected. Spawns the effect, then disappears.
     {
         Instantiate(Effect.gameObject, this.transform.position, Quaternion.identity);
+        //aSource.PlayOneShot(aSound, 1.0f);
         Destroy(this.gameObject);
     }
 

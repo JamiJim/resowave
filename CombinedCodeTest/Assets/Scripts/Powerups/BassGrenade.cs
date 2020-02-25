@@ -15,6 +15,7 @@ public class BassGrenade : MonoBehaviour
     {
         score = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
         RenderSettings.skybox = Effect;
+
     }
 
     // Update is called once per frame
