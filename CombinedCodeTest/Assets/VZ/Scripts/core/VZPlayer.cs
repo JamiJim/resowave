@@ -948,7 +948,7 @@ public class VZPlayer : MonoBehaviour
    PlayMakerVariables mPlayMakerVariables = new PlayMakerVariables();
 #endif
 
-   const string kReleaseText = "Welcome to Reso Rider!" + "                                                                            By continuing use of VZfit you agree to the License Agreement at virzoom.com/eula.htm";
+   const string kReleaseText = "Welcome to Reso Rider!" + "                                                                                                                                                                                                               By continuing use of VZfit you agree to the License Agreement at virzoom.com/eula.htm";
 
    bool mColliding = false;
    float mTurn = 0;
