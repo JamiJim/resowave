@@ -65,12 +65,12 @@ public class VZPlayer : MonoBehaviour
     private float startZ;
     private float startZT = 1475.0f;
 
-    public GameObject[] Platforms;
+    public MatChange Script;
 
+    public GameObject[] Platforms;
     public GameObject[] Terrains;
     public GameObject[] desertTrn;
     public GameObject[] cityTrrn;
-
     public GameObject[] Coins;
 
     public float targetTime = 120.0f;
@@ -320,13 +320,9 @@ public class VZPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Upon Entering a "Spawn Trigger" 
-        //Add 12 to startZ
-        //Set spawnLoc to be at the new startZ
-        //The spawnLocC is for coins and set at 1.12 units above startZ
-        //Instantiate 1 of the 4 possible Platforms at spawn Location
 
 
+        //Road and Coin Spawning
 
         if (other.gameObject.CompareTag("SpawnPlatform"))
         {
@@ -340,48 +336,14 @@ public class VZPlayer : MonoBehaviour
             Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 90, 0));
             Debug.Log(UntilNewLevel);
         }
-
-
-
-
-        //Once you enter the "Delete Trigger" (that is at the end of each platform)
-        //Destroy a gameobject with this name after 9 seconds.
-
-        /*if (other.gameObject.CompareTag("DeletePlatformGreen"))
-        {
-            Destroy(GameObject.Find("Platform 1(Clone)"));
-
-        }
-
-        if (other.gameObject.CompareTag("DeletePlatformRed"))
-        {
-            Destroy(GameObject.Find("Platform 2(Clone)"));
-
-        }
-
-        if (other.gameObject.CompareTag("DeletePlatformBlue"))
-        {
-
-            Destroy(GameObject.Find("Platform 3(Clone)"));
-
-        }
-
-        if (other.gameObject.CompareTag("DeletePlatformPurple"))
-        {
-
-            Destroy(GameObject.Find("Platform 4(Clone)"));
-        }*/
+        //Delete Platform
 
         if (other.gameObject.CompareTag("DeletePlatform"))
         {
-            Destroy(GameObject.Find("Road(Clone)"), 0f);
+            Destroy(GameObject.Find("Road(Clone)"), 1.5f);
         }
 
-        /*if (other.gameObject.CompareTag("Coin"))
-        {
-            Destroy(other.gameObject);
-            Score += 1;
-        }*/
+        //PickUp Scripts
 
         if (other.gameObject.CompareTag("2Bit"))
         {
@@ -426,6 +388,7 @@ public class VZPlayer : MonoBehaviour
             }
             Destroy(other.gameObject);
             aSource.PlayOneShot(aSound[5], 1.0f);
+            Script.ChangeMat();
         }
         if (other.gameObject.CompareTag("Powerup") && other.gameObject.layer == 9)
         {
@@ -437,6 +400,7 @@ public class VZPlayer : MonoBehaviour
         {
             
                 aSource.PlayOneShot(aSound[7], 1.0f);
+            Script.ReturnMat();
             
         }
     }
