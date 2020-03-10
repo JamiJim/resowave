@@ -6,14 +6,14 @@ public class BassGrenade : MonoBehaviour
 {
     public float GrowthSpeed = 3;
     public int MaxSize = 30;
-    private VZPlayer score;
+    //private VZPlayer score; //Moved to CoinCollector.cs
     public Material Effect;
     public Material Skybox;
 
     // Start is called before the first frame update
     void Start()
     {
-        score = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
+        //score = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>(); //Moved to CoinCollector.cs
         RenderSettings.skybox = Effect;
 
     }
@@ -44,8 +44,8 @@ public class BassGrenade : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    //Moved to "CoinCollector.cs"
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("2Bit"))
         {
@@ -72,5 +72,5 @@ public class BassGrenade : MonoBehaviour
             Destroy(other.gameObject);
             score.Score += 32;
         }
-    }
+    }*/
 }
