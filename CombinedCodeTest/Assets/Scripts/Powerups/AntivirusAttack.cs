@@ -7,6 +7,7 @@ public class AntivirusAttack : MonoBehaviour
     public float Speed;
     public float LifeTime = 4f; //How long the object exists before it starts to disappear.
     public float ScaleSpeed = 16f; //The speed at which the object disappears.
+    public float yScaleModifier = 2f; //When the object disappears, this sets the speed in which the y-axis changes (this is going to want to be at least higher than 1).
     private Vector3 target;
     private GameObject[] Virus;
     private int ListDeduction = 1;
@@ -31,7 +32,7 @@ public class AntivirusAttack : MonoBehaviour
         if (LifeTime <= 0)
         {
             this.gameObject.transform.localScale -= (new Vector3(1, 0, 0) * Time.deltaTime * ScaleSpeed);
-            this.gameObject.transform.localScale += (Vector3.up * Time.deltaTime * ScaleSpeed);
+            this.gameObject.transform.localScale += (Vector3.up * Time.deltaTime * ScaleSpeed * yScaleModifier);
             if (this.gameObject.transform.localScale.x <= 0)
             {
                 Destroy(this.gameObject);
