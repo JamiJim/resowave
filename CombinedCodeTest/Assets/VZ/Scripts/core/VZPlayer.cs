@@ -22,11 +22,8 @@ using HutongGames.PlayMaker;
 
 public class VZPlayer : MonoBehaviour
 {
-   //***********************************************************************
-   // PUBLIC API
-   //***********************************************************************
-
-   public float NearClipPlane = 0.2f;
+    #region VZ_Variables
+    public float NearClipPlane = 0.2f;
    public float FarClipPlane = 3000;
    public float DraftSpeed = 0;
    public float DraftFactor = 0;
@@ -57,9 +54,12 @@ public class VZPlayer : MonoBehaviour
 
    public static VZPlayer Instance { get; private set; }
    public static VZController Controller { get; private set; }
+    #endregion
+    //***********************************************************************
+    // PUBLIC API
+    //***********************************************************************
 
-
-    //Becker Stuff 1
+    #region //Becker Variables
     [SerializeField]
     private float speed = 5.0f;
     private float startZ;
@@ -71,6 +71,7 @@ public class VZPlayer : MonoBehaviour
     public GameObject[] Terrains;
     public GameObject[] desertTrn;
     public GameObject[] cityTrrn;
+    public GameObject[] artTrrn;
     public GameObject[] Coins;
 
     public float targetTime = 120.0f;
@@ -88,7 +89,10 @@ public class VZPlayer : MonoBehaviour
     public AudioSource aSource;
     public AudioClip[] aSound;
 
-    //Becker Stuff End
+    #endregion
+
+    #region //More VZ stuff
+
 #if VZ_ARCADE || VZ_STREETVIEW
    public static VZServer Server { get; private set; }
 #endif
@@ -196,11 +200,13 @@ public class VZPlayer : MonoBehaviour
       return Controller.GetDifficulty();
    }
 
-   //***********************************************************************
-   // PROTECTED API
-   //***********************************************************************
+    #endregion
 
-   protected const string kStateSetup = "Setup";
+    //***********************************************************************
+    // PROTECTED API
+    //***********************************************************************
+    #region //Protected VZ Stuff
+    protected const string kStateSetup = "Setup";
    protected const string kStateNormal = "Normal";
 
    protected float mInitialRot;
@@ -271,7 +277,11 @@ public class VZPlayer : MonoBehaviour
 #endif
    }
 
-   protected virtual void Start()
+    #endregion
+
+
+    #region //Protected VZ Start
+    protected virtual void Start()
    {
       mInput.OnMenu = false;
 
@@ -303,9 +313,10 @@ public class VZPlayer : MonoBehaviour
       }
       else
          StartLevel();
+        #endregion
 
-        //Becker Stuff 2
-        Score = 0;
+    #region//Becker Arrays
+        
         Terrains[0] = desertTrn[0];
         Terrains[1] = desertTrn[1];
         Terrains[2] = desertTrn[2];
@@ -314,9 +325,9 @@ public class VZPlayer : MonoBehaviour
         UntilNewLevel = LevelLength;
     }
 
-    //Becker Stuff End
+    #endregion
 
-    //Becker Stuff 3
+    #region//Becker Actionable Code
 
     private void OnTriggerEnter(Collider other)
     {
@@ -404,7 +415,7 @@ public class VZPlayer : MonoBehaviour
             
         }
     }
-    //Becker Stuff End
+    #endregion 
 
     protected virtual void StartLevel()
    {
@@ -428,7 +439,7 @@ public class VZPlayer : MonoBehaviour
          UpdateNormal();
       }
 
-        //Becker Stuff 4
+        #region //Becker Update()
 
         targetTime -= Time.deltaTime;
 
@@ -476,7 +487,7 @@ public class VZPlayer : MonoBehaviour
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
 
         }
-        //Becker Stuff End
+        #endregion 
 #if VZ_PLAYMAKER
       // Update PlayMaker variables.
 #if VZ_ARCADE
@@ -484,10 +495,10 @@ public class VZPlayer : MonoBehaviour
 #endif
          mPlayMakerVariables.Update();
 #endif
-    }
+    } //Contains Bekcer Update()
 
 
-    //Becker stuff 5
+    #region //Becker Function LoadNextLevelAssests()
     void loadNextLevelAssets()
     {
         Debug.Log("timer end");
@@ -498,6 +509,9 @@ public class VZPlayer : MonoBehaviour
                 case 1:
                     Terrains[i] = cityTrrn[i];
                     break;
+                case 2:
+                    Terrains[i] = artTrrn[i];
+                    break;
                 case 0:
                     Terrains[i] = desertTrn[i];
                     break;
@@ -506,7 +520,7 @@ public class VZPlayer : MonoBehaviour
 
         }
     }
-    //Becker Stuff End
+    #endregion
 
     protected virtual void OnDestroy()
    {
