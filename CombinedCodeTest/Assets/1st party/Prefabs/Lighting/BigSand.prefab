@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &373714155422579115
+--- !u!1 &6587903527669637997
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 93913451005036806}
-  - component: {fileID: 5045740498134141301}
+  - component: {fileID: 6849686517912998848}
+  - component: {fileID: 1748890264927425459}
   m_Layer: 0
-  m_Name: BigSand
+  m_Name: NewBox1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &93913451005036806
+--- !u!4 &6849686517912998848
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373714155422579115}
+  m_GameObject: {fileID: 6587903527669637997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2639728, y: 5.864967, z: 14.835491}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,25 +31,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5045740498134141301
+--- !u!114 &1748890264927425459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373714155422579115}
+  m_GameObject: {fileID: 6587903527669637997}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 153476a90fddeaa419d7d5cc5957f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LevelName: Big Sand
-  FrontTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
-  BackTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
-  UpTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
-  DownTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
-  LeftTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
-  RightTex: {fileID: 2800000, guid: 97a60bf12125bad43ababb4a6af53c17, type: 3}
+  FrontTex: {fileID: 2800000, guid: 69269a50c1565bf49a82d29298c3dad8, type: 3}
+  BackTex: {fileID: 2800000, guid: a3bda1871d02f9e4183ec7dc6673a1a6, type: 3}
+  UpTex: {fileID: 2800000, guid: 6bba32c8a81f68c4587fba5f0636f52a, type: 3}
+  DownTex: {fileID: 2800000, guid: 6ce2c5c12a6d13e4e8ad23cb6452ebda, type: 3}
+  LeftTex: {fileID: 2800000, guid: d1ada95d949d7cd4db26bf9d3835a9f3, type: 3}
+  RightTex: {fileID: 2800000, guid: e27689873b63a474caf43ee632d924bf, type: 3}
   NewLevelCubeMapTransition:
   - {fileID: 8900000, guid: 98238ab0f5fb0ff498a3a3953fa92786, type: 3}
   - {fileID: 8900000, guid: 5b29bd8c2de5a0244989f1ef824d5755, type: 3}

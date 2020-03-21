@@ -84,6 +84,7 @@ public class VZPlayer : MonoBehaviour
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public bool BeginTransition = false;
     public   int Score = 0;
+    public int ScoreMultiplier = 1;
     public int VirusDecrement = 16; //The amount of points the player loses if they touch a virus.
 
     public AudioSource aSource;
@@ -359,32 +360,32 @@ public class VZPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("2Bit"))
         {
             Destroy(other.gameObject);
-            Score += 2;
+            Score += 2 * ScoreMultiplier;
             aSource.PlayOneShot(aSound[0], 1.0f);
 
         }
         if (other.gameObject.CompareTag("4Bit"))
         {
             Destroy(other.gameObject);
-            Score += 4;
+            Score += 4 * ScoreMultiplier;
             aSource.PlayOneShot(aSound[1], 1.0f);
         }
         if (other.gameObject.CompareTag("8Bit"))
         {
             Destroy(other.gameObject);
-            Score += 8;
+            Score += 8 * ScoreMultiplier;
             aSource.PlayOneShot(aSound[2], 1.0f);
         }
         if (other.gameObject.CompareTag("16Bit"))
         {
             Destroy(other.gameObject);
-            Score += 16;
+            Score += 16 * ScoreMultiplier;
             aSource.PlayOneShot(aSound[3], 1.0f);
         }
         if (other.gameObject.CompareTag("32Bit"))
         {
             Destroy(other.gameObject);
-            Score += 32;
+            Score += 32 * ScoreMultiplier;
             aSource.PlayOneShot(aSound[4], 1.0f);
         }
         if (other.gameObject.CompareTag("Virus"))

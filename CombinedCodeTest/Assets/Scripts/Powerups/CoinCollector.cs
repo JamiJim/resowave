@@ -17,27 +17,27 @@ public class CoinCollector : MonoBehaviour
         if (other.gameObject.CompareTag("2Bit"))
         {
             Destroy(other.gameObject);
-            score.Score += 2;
+            score.Score += 2 * score.ScoreMultiplier;
         }
         if (other.gameObject.CompareTag("4Bit"))
         {
             Destroy(other.gameObject);
-            score.Score += 4;
+            score.Score += 4 * score.ScoreMultiplier;
         }
         if (other.gameObject.CompareTag("8Bit"))
         {
             Destroy(other.gameObject);
-            score.Score += 8;
+            score.Score += 8 * score.ScoreMultiplier;
         }
         if (other.gameObject.CompareTag("16Bit"))
         {
             Destroy(other.gameObject);
-            score.Score += 16;
+            score.Score += 16 * score.ScoreMultiplier;
         }
         if (other.gameObject.CompareTag("32Bit"))
         {
             Destroy(other.gameObject);
-            score.Score += 32;
+            score.Score += 32 * score.ScoreMultiplier;
         }
     }
 }

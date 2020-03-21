@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class SuspiciousEmail : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] Effects;
+    //public AudioSource aSource;
+    //public AudioClip aSound;
+
+
+    private void PowerupEffect()
     {
-        
+        Instantiate(Effects[Random.Range(0, (Effects.Length - 1))], this.transform.position, Quaternion.identity); //A random powerup effect is used, from a list specified in the editor.
+        //aSource.PlayOneShot(aSound, 1.0f);
+        Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PowerupEffect();
+        }
     }
 }
