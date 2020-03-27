@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7656019799214149479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.795, y: 0.2363, z: -0.2877}
-  m_LocalScale: {x: 2.6806211, y: 1.5768332, z: 0.2831024}
+  m_LocalPosition: {x: 1.795, y: 0.2363, z: 0.257}
+  m_LocalScale: {x: 2.6806211, y: 1.5768332, z: 0.7094546}
   m_Children: []
   m_Father: {fileID: 7656019799839237535}
   m_RootOrder: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7656019799839237535}
   - component: {fileID: 7656019799839237534}
   m_Layer: 0
-  m_Name: NetEffect
+  m_Name: DoubleNetEffect
   m_TagString: Net
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5126508105600604ca3b21201312567a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllNets: []
   Lifetime: 12
+  NetSide: 
 --- !u!1 &7656019800240573249
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,9 +199,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7656019800240573249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.795, y: 0.2363, z: -0.2877}
-  m_LocalScale: {x: 2.680621, y: 1.5768332, z: 0.2831024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.795, y: 0.2363, z: 0.257}
+  m_LocalScale: {x: 2.680621, y: 1.5768332, z: 0.7094546}
   m_Children: []
   m_Father: {fileID: 7656019799839237535}
   m_RootOrder: 1

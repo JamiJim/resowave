@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class VirusPowerdown : MonoBehaviour
 {
-    private VZPlayer score;
-    public int ScoreDecrement = 128;
+    private VZPlayer Player;
 
     private void Start()
     {
-        score = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
+        Player = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<VZPlayer>();
     }
 
 
@@ -17,13 +16,13 @@ public class VirusPowerdown : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (score.Score < ScoreDecrement)
+            if (Player.Score < Player.VirusDecrement)
             {
-                score.Score = 0;
+                Player.Score = 0;
             }
             else
             {
-                score.Score -= 128;
+                Player.Score -= Player.VirusDecrement;
             }
             Destroy(this.gameObject);
         }
