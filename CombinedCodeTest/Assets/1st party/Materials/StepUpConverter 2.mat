@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ColumnGlow
-  m_Shader: {fileID: 4800000, guid: 25bc671e448181c4fab3e6f52fb9d4bd, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Name: StepUpConverter 2
+  m_Shader: {fileID: 10760, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -57,29 +57,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EdgePosition: 1
-    - _FadeEnd: 0.216
-    - _FadeStart: 1
-    - _FrontFactor: 0
+    - _DstBlend: 10
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlowEnd: 0.07
-    - _GlowEndEnd: 0
-    - _GlowStart: 0.33
-    - _GlowStartEnd: 0.3
-    - _Intensity: 0.588
-    - _InvFade: 1
+    - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 0
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Thickness: 0.652
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _ZWrite: 1
+    - _UseUIAlphaClip: 0
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.25338197, g: 0.6886792, b: 0.62522614, a: 0.34509805}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0.006109435, g: 0.8308824, b: 0.7284968, a: 0.5}
