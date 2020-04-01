@@ -7,7 +7,7 @@ public class StepUpConverter : MonoBehaviour
     private VZPlayer Player;
     public GameObject[] Converters;
     public float Lifetime = 6;
-    private static float lifetime;
+    private float lifetime;
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,11 @@ public class StepUpConverter : MonoBehaviour
 
         if (Converters.Length > 1) //If a Step-Up Converter has been collected at the same time one is already active...
         {
-            lifetime += Lifetime; //The time is increased by the Lifetime of the object...
-            Destroy(Converters[1].gameObject); //And the new one (this one) is removed.
+            Destroy(Converters[0].gameObject); //The old one is removed.
         }
-        else
-        {
-            lifetime = Lifetime; //However, if there ARE no other Step-Up converters active, everything continues as normal.
-            Player.ScoreMultiplier = 2; //The point values of every coin collected are doubled while this powerup is active.
-        }
+
+        lifetime = Lifetime;
+        Player.ScoreMultiplier = 2; //The point values of every coin collected are doubled while this powerup is active.
     }
 
     // Update is called once per frame
