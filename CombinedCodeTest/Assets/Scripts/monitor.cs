@@ -10,8 +10,8 @@ public class monitor : MonoBehaviour
     int seconds;
     void Start() 
     {
-        invokeRepeating("Rise",0f,30f);
-        invokeRepeating("Fall", 20f, 30f);
+        //invokeRepeating("Rise",0f,30f);
+        //invokeRepeating("Fall", 20f, 30f);
     }
     void Update()
     {
