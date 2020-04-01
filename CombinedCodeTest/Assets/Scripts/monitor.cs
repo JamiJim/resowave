@@ -6,20 +6,38 @@ public class monitor : MonoBehaviour
 {
     public GameObject bike;
     public GameObject CPUmonitor;
+    public bool rising;
     float timer = 0.0f;
-    int seconds;
+    float i;
     void Start() 
     {
-        invokeRepeating("Rise",0f,30f);
-        invokeRepeating("Fall", 20f, 30f);
+        InvokeRepeating("Rise",0f,30f);
+        InvokeRepeating("Fall", 20f, 30f);
     }
     void Update()
     {
-        timer += Time.deltaTime%60;
-        Debug.Log(timer+"seconds");
-        Vector3 temp = new Vector3(-100, 50, 200f);
-        CPUmonitor.transform.position = bike.transform.position+temp;
-        
+        Vector3 temp = new Vector3(-100, i, 200f);
+        switch (rising) 
+        {
+            case (true):
+                if (i < 50) 
+                {
+                    i= i + 0.1f;
+                }
+                break;
+            case (false):
+                if(i>-50)
+                i=i - 0.1f;
+                break;
+        }
+        CPUmonitor.transform.position = bike.tranform.position+temp;
     }
-    void Rise() { }
+    void Rise() 
+    {
+        rising = true;
+    }
+    void Fall()
+    {
+        rising = false;
+    }
 }
