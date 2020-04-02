@@ -12,7 +12,7 @@ public class monitor : MonoBehaviour
     void Start() 
     {
         InvokeRepeating("Rise",0f,30f);
-        InvokeRepeating("Fall", 20f, 30f);
+        InvokeRepeating("Fall", 10f, 30f);
     }
     void Update()
     {
@@ -30,7 +30,7 @@ public class monitor : MonoBehaviour
                 i=i - 0.1f;
                 break;
         }
-        CPUmonitor.transform.position = bike.tranform.position+temp;
+        CPUmonitor.transform.position = bike.transform.position+temp;
     }
     void Rise() 
     {
