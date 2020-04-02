@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-
+    
     //Sets the paused state to false immediately
     private bool paused = false;
-
     private float speed;
     //private float StartTimer = 10f;
-    private float PauseTimer = 5f;
-
+    private float PauseTimer = 10f;
     private Rigidbody rb;
 
     private void Awake()
@@ -26,7 +24,6 @@ public class TimeController : MonoBehaviour
     {
         speed = rb.velocity.magnitude;
         Debug.Log(speed);
-        Debug.Log(paused);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -41,36 +38,32 @@ public class TimeController : MonoBehaviour
         if (speed <= 10.0f)
         {
             PauseGame();
-
-        }
-
-    }
-
-    void PauseGame()
-    {
-        PauseTimer -= Time.deltaTime;
-        if (PauseTimer <= 0)
-        {
-            Time.timeScale = 0;
-            paused = true;
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
             UnPauseGame();
         }
-
-    }
-
-    void UnPauseGame()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+        //StartTimer -= Time.deltaTime;
+        /*if (StartTimer == 0)
         {
-            paused = !paused;
-            Time.timeScale = 1;
-            PauseTimer = 5f;
 
-        }
+        }*/
+
     }
+
+ void PauseGame()
+  {
+     PauseTimer -= Time.deltaTime;
+     if (PauseTimer <= 0)
+     {
+        Time.timeScale = 0;
+            
+     }
+  }
+   
+  void UnPauseGame()
+  {
+    if (Input.GetKeyDown(KeyCode.R))
+    {
+        //Unpause game here
+    }
+  }
+
 }

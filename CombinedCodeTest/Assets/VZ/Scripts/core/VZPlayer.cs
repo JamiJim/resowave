@@ -85,7 +85,7 @@ public class VZPlayer : MonoBehaviour
     public bool BeginTransition = false;
     public   int Score = 0;
     public int ScoreMultiplier = 1;
-    public int VirusDecrement = 128; //The amount of points the player loses if they touch a virus.
+    public int VirusDecrement = 16; //The amount of points the player loses if they touch a virus.
 
     public AudioSource aSource;
     public AudioClip[] aSound;

@@ -7,7 +7,7 @@ public class SeekEffect : MonoBehaviour
     private GameObject Player;
     public float MagnificationSpeed;
     public float Lifetime;
-    private float lifetime;
+    private static float lifetime;
     private GameObject[] Seeks;
 
     //Affects the Geometry
@@ -22,10 +22,13 @@ public class SeekEffect : MonoBehaviour
 
         if (Seeks.Length > 1) //If a /Seek has been collected at the same time one is already active...
         {
-            Destroy(Seeks[0].gameObject); //The old one is removed.
+            lifetime += Lifetime; //The time is increased by the Lifetime of the object...
+            Destroy(Seeks[1].gameObject); //And the new one (this one) is removed.
         }
-
-        lifetime = Lifetime;
+        else
+        {
+            lifetime = Lifetime; //However, if there ARE no other /Seeks active, everything continues as normal.
+        }
     }
 
     // Update is called once per frame

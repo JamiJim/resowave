@@ -26,7 +26,7 @@ public class LaserSpearEffect : MonoBehaviour
         {
             RotationSpeed += RotateSpeed * Time.deltaTime;
             this.transform.RotateAround(RotationPoint.transform.position, Vector3.left, RotationSpeed * Time.deltaTime);
-            //Debug.Log(this.transform.rotation.x);
+            Debug.Log(this.transform.rotation.x);
         }
         if (this.transform.rotation.x <= MaxRotationPoint)
         {
