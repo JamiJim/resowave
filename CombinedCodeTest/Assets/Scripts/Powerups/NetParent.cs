@@ -7,7 +7,7 @@ public class NetParent : MonoBehaviour
     private GameObject Player;
     public GameObject[] AllNets;
     public float Lifetime = 12f; //How long the object should last before it disappears.
-    public string NetSide; //This should be whichever tag is used ("LeftNet" or "RightNet")
+    public string NetSide; //This should be whichever tag is used ("Left" or "Right").
     private float lifetime; //This is a value that decreases by 1 every second. Once it hits 0, the object disappears.
     public float ScaleSpeed = 2.2f;
     private bool isMaxSized = false;
