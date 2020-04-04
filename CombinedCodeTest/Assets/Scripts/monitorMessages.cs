@@ -6,44 +6,20 @@ using UnityEngine.UI;
 public class monitorMessages : MonoBehaviour
 {
     public Text message;
-    string messagechoice;
+    string[] messagechoice = new string[9] { "Let's ride!", "You're doing great!", "~You're a resonation sensation~", "Keep it up Zoombie!", "Vaporizing Speeds", "Resonating!", "Straight Vibin'", "That's the spirit!", "~Ok Zoomer~" };
     int choiceCount = 1;
     void Start()
     {
-        InvokeRepeating("messageCycle", 0.0f, 30.0f);
+        InvokeRepeating("messageCycle", 30.0f, 30.0f);
 
     }
     void Update()
     {
-        message.text = messagechoice;
+        message.text = messagechoice[choiceCount];
     }
     void messageCycle()
     {
-        switch (choiceCount)
-        {
-            case 1:
-                messagechoice = "Let's ride!";
-                choiceCount++;
-                break;
-
-            case 2:
-                messagechoice = "You're doing great!";
-                choiceCount++;
-                break;
-            case 3:
-                messagechoice = "~You're a resonation sensation~";
-                choiceCount++;
-                break;
-
-            case 4:
-                messagechoice = "Keep it up Zoombie!";
-                choiceCount++;
-                break;
-            case 5:
-                messagechoice = "Vaporizing Speeds";
-                choiceCount = 1;
-                break;
-        }
+        choiceCount = Random.Range(1, 9);
 
     }
 }

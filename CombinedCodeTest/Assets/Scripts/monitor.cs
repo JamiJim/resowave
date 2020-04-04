@@ -22,12 +22,12 @@ public class monitor : MonoBehaviour
             case (true):
                 if (i < 50) 
                 {
-                    i= i + 0.1f;
+                    i= i + 0.15f;
                 }
                 break;
             case (false):
-                if(i>-50)
-                i=i - 0.1f;
+                if(i>-100)
+                i=i - 0.15f;
                 break;
         }
         CPUmonitor.transform.position = bike.transform.position+temp;
