@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-
     //Sets the paused state to false immediately
     private bool paused = false;
 
@@ -14,7 +13,6 @@ public class TimeController : MonoBehaviour
     private float PauseTimer = 5f;
 
     private Rigidbody rb;
-
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -25,17 +23,22 @@ public class TimeController : MonoBehaviour
     void Update()
     {
         speed = rb.velocity.magnitude;
-        Debug.Log(speed);
-        Debug.Log(paused);
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (paused)
+            {
                 Time.timeScale = 1;
-            else
-                Time.timeScale = 0;
+                paused = !paused;
+            }
 
-            paused = !paused;
+            else
+            {
+                Time.timeScale = 0;
+            }
+
+
+
         }
 
         if (speed <= 10.0f)
@@ -73,4 +76,9 @@ public class TimeController : MonoBehaviour
 
         }
     }
+
+
+
+
+
 }
