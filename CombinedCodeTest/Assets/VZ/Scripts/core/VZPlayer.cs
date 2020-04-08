@@ -451,7 +451,7 @@ public class VZPlayer : MonoBehaviour
         }
         if (targetTime <= 0.0f)
         {
-            if (levelNo == 1)
+            if (levelNo == 2)
             {
                 levelNo = 0;
             }
