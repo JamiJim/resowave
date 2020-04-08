@@ -444,7 +444,7 @@ public class VZPlayer : MonoBehaviour
 
         targetTime -= Time.deltaTime;
 
-        if (targetTime <= 100.0f && BeginTransition == false)
+        if (targetTime <= 0.0f && BeginTransition == false)
         {
             Instantiate(NewSkybox, this.gameObject.transform.position, this.gameObject.transform.rotation); //Begins the skybox transition.
             BeginTransition = true; //This is necessary, or else the objects will keep appearing.
