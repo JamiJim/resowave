@@ -14,6 +14,8 @@ public class MenuControl : MonoBehaviour
     public Sprite ButtonUp;
     public Sprite ButtonDown;
     public Sprite ButtonRight;
+    public Sprite ButtonRightInactive;
+    public Sprite ButtonLeft;
 
     public GameObject VisualSelection;
     private Image SelectionEffect;
@@ -27,22 +29,32 @@ public class MenuControl : MonoBehaviour
     private int position = 1;
     private int maxPosition;
 
-    private bool Selectable = true;
+    public bool Selectable = true;
     public float MovementTimer = 1.0f;
-    private float MovementAmount;
+    private float MoveTime;
     public float SelectTimer = 0;
     public GameObject ConfirmText;
-    public float transformAmount = 362;
+    private float transformAmount = 191;
+    private string MoveDirection = "";
+    private Vector3[] lastPositions;
+    public float SlideAmount;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        maxPosition = MenuItems.Length;
+        maxPosition = MenuItems.Length - 1;
         VisualButton = ButtonDisplay.GetComponent<Image>();
         SelectionEffect = VisualSelection.GetComponent<Image>();
         SelectionColor = SelectionEffect.material.color;
         modifier = (Mathf.Sin(SinModifier) * Time.deltaTime);
-        MovementAmount = MenuItems[0].transform.position.y;
+        int i = 0;
+        lastPositions = new Vector3[MenuItems.Length];
+        foreach (GameObject item in MenuItems)
+        {
+            lastPositions[i] = MenuItems[i].transform.position;
+            i += 1;
+        }
     }
 
     void VisualButtonControls()
@@ -57,18 +69,28 @@ public class MenuControl : MonoBehaviour
             VisualButton.sprite = ButtonDown;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && isSelecting == true)
         {
             VisualButton.sprite = ButtonRight;
         }
 
-        if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && isSelecting == false)
+        {
+            VisualButton.sprite = ButtonRightInactive;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            VisualButton.sprite = ButtonLeft;
+        }
+
+        if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
         {
             VisualButton.sprite = ButtonNoInput;
         }
     }
 
-    void VisualSelectionControls()
+    void VisualHighlightControls()
     {
         if (Selectable == true)
         {
@@ -93,7 +115,7 @@ public class MenuControl : MonoBehaviour
 
             if (isSelecting == true)
             {
-                SelectionColor.a += Time.deltaTime;
+                SelectionColor.a += Time.deltaTime * 0.5f;
                 SelectionColor.r = 0;
                 SelectionColor.g = 1;
                 SelectionColor.b = 0;
@@ -103,35 +125,96 @@ public class MenuControl : MonoBehaviour
         }
     }
 
+    void VisualMenuControls()
+    {
+        if (Input.GetKey(KeyCode.UpArrow) && Selectable && (position > 0) && Selectable == true && isSelecting == false)
+        {
+            Selectable = false;
+            int i = 0;
+            foreach (GameObject item in MenuItems)
+            {
+                lastPositions[i] = MenuItems[i].transform.position;
+                i += 1;
+            }
+            position -= 1;
+            MoveDirection = "up";
+            MoveTime = MovementTimer;
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow) && Selectable && (position < maxPosition) && Selectable == true && isSelecting == false)
+        {
+            Selectable = false;
+            int i = 0;
+            foreach (GameObject item in MenuItems)
+            {
+                lastPositions[i] = MenuItems[i].transform.position;
+                i += 1;
+            }
+            position += 1;
+            MoveDirection = "down";
+            MoveTime = MovementTimer;
+        }
+
+        if (Selectable == false)
+        {
+            if (MoveDirection == "up" && MoveTime > 0)
+            {
+                foreach (GameObject item in MenuItems)
+                {
+                    item.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount);
+                    MoveTime -= Time.deltaTime;
+                }
+                if (MoveTime <= 0)
+                {
+                    int i = 0;
+                    foreach (GameObject item in MenuItems)
+                    {
+                        item.transform.position = lastPositions[i];
+                        item.transform.Translate(Vector3.down * transformAmount);
+                        i += 1;
+                    }
+                    Selectable = true;
+                }
+            }
+            if (MoveDirection == "down" && MoveTime > 0)
+            {
+                foreach (GameObject item in MenuItems)
+                {
+                    item.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount);
+                    MoveTime -= Time.deltaTime;
+                }
+                if (MoveTime <= 0)
+                {
+                    int i = 0;
+                    foreach (GameObject item in MenuItems)
+                    {
+                        item.transform.position = lastPositions[i];
+                        item.transform.Translate(Vector3.up * transformAmount);
+                        i += 1;
+                    }
+                    Selectable = true;
+                }
+
+            }
+
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         VisualButtonControls();
-        VisualSelectionControls();
+        VisualHighlightControls();
+        VisualMenuControls();
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Selectable && (position < maxPosition))
+        //Controls what happens on each menu item.
+        if (SelectionColor.a >= 1)
         {
-            //Selectable = false; //191
-            foreach (GameObject item in MenuItems)
+            if (position == 1)
             {
-                item.transform.Translate(Vector3.down * transformAmount);
-                position += 1;
+                SceneManager.LoadScene("Test+Deletion");
             }
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && Selectable && (position >= 0))
-        {
-            //Selectable = false; //191
-            foreach (GameObject item in MenuItems)
-            {
-                item.transform.Translate(Vector3.up * transformAmount);
-                position -= 1;
-            }
-        }
 
-        if (position == 1 && SelectionColor.a >= 1)
-        {
-            SceneManager.LoadScene("Test+Deletion");
         }
-
     }
 }
