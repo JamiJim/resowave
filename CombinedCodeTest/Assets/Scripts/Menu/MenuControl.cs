@@ -38,7 +38,14 @@ public class MenuControl : MonoBehaviour
     private string MoveDirection = "";
     private Vector3[] lastPositions;
     public float SlideAmount;
-    
+    public string MenuState = "Main";
+    public bool ChangingMenus = false;
+    public GameObject[] CreditsItems;
+    public GameObject BlackFade;
+    public GameObject CenterTarget;
+    public GameObject BackCenterTarget;
+    public float SelectionMoveAmount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,20 +68,26 @@ public class MenuControl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
         {
-            VisualButton.sprite = ButtonUp;
+            if (MenuState != "Credits" && MenuState != "MainToCredits" && MenuState != "CreditsToMain")
+            {
+                VisualButton.sprite = ButtonUp;
+            }
         }
 
         if (Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow))
         {
-            VisualButton.sprite = ButtonDown;
+            if (MenuState != "Credits" && MenuState != "MainToCredits" && MenuState != "CreditsToMain")
+            {
+                VisualButton.sprite = ButtonDown;
+            }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && isSelecting == true)
+        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && (isSelecting == true || ChangingMenus == false))
         {
             VisualButton.sprite = ButtonRight;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && isSelecting == false)
+        if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && (isSelecting == false || ChangingMenus == true))
         {
             VisualButton.sprite = ButtonRightInactive;
         }
@@ -99,6 +112,11 @@ public class MenuControl : MonoBehaviour
                 isSelecting = false;
             }
 
+            if (ChangingMenus == true)
+            {
+                isSelecting = false;
+            }
+
             if (isSelecting == false)
             {
                 SelectionColor.r = 1;
@@ -108,12 +126,12 @@ public class MenuControl : MonoBehaviour
                 ConfirmText.SetActive(false);
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) && ChangingMenus == false)
             {
                 isSelecting = true;
             }
 
-            if (isSelecting == true)
+            if (isSelecting == true && ChangingMenus == false)
             {
                 SelectionColor.a += Time.deltaTime * 0.5f;
                 SelectionColor.r = 0;
@@ -127,76 +145,143 @@ public class MenuControl : MonoBehaviour
 
     void VisualMenuControls()
     {
-        if (Input.GetKey(KeyCode.UpArrow) && Selectable && (position > 0) && Selectable == true && isSelecting == false)
+        if (MenuState != "Credits" && MenuState != "MainToCredits" && MenuState != "CreditsToMain")
         {
-            Selectable = false;
-            int i = 0;
-            foreach (GameObject item in MenuItems)
+            if (Input.GetKey(KeyCode.UpArrow) && Selectable && (position > 0) && Selectable == true && isSelecting == false)
             {
-                lastPositions[i] = MenuItems[i].transform.position;
-                i += 1;
-            }
-            position -= 1;
-            MoveDirection = "up";
-            MoveTime = MovementTimer;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow) && Selectable && (position < maxPosition) && Selectable == true && isSelecting == false)
-        {
-            Selectable = false;
-            int i = 0;
-            foreach (GameObject item in MenuItems)
-            {
-                lastPositions[i] = MenuItems[i].transform.position;
-                i += 1;
-            }
-            position += 1;
-            MoveDirection = "down";
-            MoveTime = MovementTimer;
-        }
-
-        if (Selectable == false)
-        {
-            if (MoveDirection == "up" && MoveTime > 0)
-            {
+                Selectable = false;
+                int i = 0;
                 foreach (GameObject item in MenuItems)
                 {
-                    item.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount);
-                    MoveTime -= Time.deltaTime;
+                    lastPositions[i] = MenuItems[i].transform.position;
+                    i += 1;
                 }
-                if (MoveTime <= 0)
-                {
-                    int i = 0;
-                    foreach (GameObject item in MenuItems)
-                    {
-                        item.transform.position = lastPositions[i];
-                        item.transform.Translate(Vector3.down * transformAmount);
-                        i += 1;
-                    }
-                    Selectable = true;
-                }
+                position -= 1;
+                MoveDirection = "up";
+                MoveTime = MovementTimer;
             }
-            if (MoveDirection == "down" && MoveTime > 0)
+
+            if (Input.GetKey(KeyCode.DownArrow) && Selectable && (position < maxPosition) && Selectable == true && isSelecting == false)
             {
+                Selectable = false;
+                int i = 0;
                 foreach (GameObject item in MenuItems)
                 {
-                    item.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount);
-                    MoveTime -= Time.deltaTime;
+                    lastPositions[i] = MenuItems[i].transform.position;
+                    i += 1;
                 }
-                if (MoveTime <= 0)
+                position += 1;
+                MoveDirection = "down";
+                MoveTime = MovementTimer;
+            }
+
+            if (Selectable == false)
+            {
+                if (MoveDirection == "up" && MoveTime > 0)
                 {
-                    int i = 0;
                     foreach (GameObject item in MenuItems)
                     {
-                        item.transform.position = lastPositions[i];
-                        item.transform.Translate(Vector3.up * transformAmount);
-                        i += 1;
+                        item.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount);
+                        MoveTime -= Time.deltaTime;
                     }
-                    Selectable = true;
+                    if (MoveTime <= 0)
+                    {
+                        int i = 0;
+                        foreach (GameObject item in MenuItems)
+                        {
+                            item.transform.position = lastPositions[i];
+                            item.transform.Translate(Vector3.down * transformAmount);
+                            i += 1;
+                        }
+                        Selectable = true;
+                    }
+                }
+                if (MoveDirection == "down" && MoveTime > 0)
+                {
+                    foreach (GameObject item in MenuItems)
+                    {
+                        item.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount);
+                        MoveTime -= Time.deltaTime;
+                    }
+                    if (MoveTime <= 0)
+                    {
+                        int i = 0;
+                        foreach (GameObject item in MenuItems)
+                        {
+                            item.transform.position = lastPositions[i];
+                            item.transform.Translate(Vector3.up * transformAmount);
+                            i += 1;
+                        }
+                        Selectable = true;
+                    }
+
                 }
 
             }
+        }
+    }
 
+    void CreditsMenu()
+    {
+        if (ChangingMenus == true && MenuState == "MainToCredits" && MoveTime > 0)
+        {
+            SelectionEffect.transform.Translate(Vector3.down * Time.deltaTime * SelectionMoveAmount);
+            foreach (GameObject credits in CreditsItems)
+            {
+                credits.transform.Translate(Vector3.left * Time.deltaTime * SlideAmount * 3);
+            }
+            MoveTime -= Time.deltaTime;
+            
+            foreach (GameObject item in MenuItems)
+            {
+                item.transform.Translate(Vector3.left * Time.deltaTime * SlideAmount * 3);
+            }
+
+            if (MoveTime <= 0)
+            {
+                int i = 0;
+
+                CreditsItems[0].transform.position = CenterTarget.transform.position;
+                CreditsItems[1].transform.position = BackCenterTarget.transform.position;
+                VisualSelection.transform.position = BackCenterTarget.transform.position;
+                ChangingMenus = false;
+                MenuState = "Credits";
+            }
+        }
+
+        if (ChangingMenus == true && MenuState == "CreditsToMain" && MoveTime > 0)
+        {
+            SelectionEffect.transform.Translate(Vector3.up * Time.deltaTime * SelectionMoveAmount);
+            foreach (GameObject credits in CreditsItems)
+            {
+                credits.transform.Translate(Vector3.right * Time.deltaTime * SlideAmount * 3);
+            }
+            MoveTime -= Time.deltaTime;
+
+            foreach (GameObject item in MenuItems)
+            {
+                item.transform.Translate(Vector3.right * Time.deltaTime * SlideAmount * 3);
+            }
+
+            if (MoveTime <= 0)
+            {
+                int i = 0;
+                foreach (GameObject item in MenuItems)
+                {
+                    item.transform.position = lastPositions[i];
+                    i += 1;
+                }
+
+                VisualSelection.transform.position = MenuItems[2].transform.position;
+
+                foreach (GameObject credits in CreditsItems)
+                {
+                    credits.SetActive(false);
+                }
+                BlackFade.SetActive(false);
+                ChangingMenus = false;
+                MenuState = "Main";
+            }
         }
     }
 
@@ -206,15 +291,52 @@ public class MenuControl : MonoBehaviour
         VisualButtonControls();
         VisualHighlightControls();
         VisualMenuControls();
+        CreditsMenu();
 
         //Controls what happens on each menu item.
         if (SelectionColor.a >= 1)
         {
-            if (position == 1)
+            if (MenuState == "Main")
             {
-                SceneManager.LoadScene("Test+Deletion");
+                if (position == 1)
+                {
+                    SceneManager.LoadScene("Test+Deletion");
+                }
+
+                if (position == 2)
+                {
+                    MenuState = "MainToCredits";
+                    ChangingMenus = true;
+                    MoveTime = MovementTimer;
+
+                    foreach (GameObject credits in CreditsItems)
+                    {
+                        credits.SetActive(true);
+                    }
+                    BlackFade.SetActive(true);
+
+                    int i = 0;
+                    foreach (GameObject item in MenuItems)
+                    {
+                        lastPositions[i] = MenuItems[i].transform.position;
+                        i += 1;
+                    }
+                }
+
+                if (position == 3)
+                {
+                    Application.Quit();
+                }
             }
 
+            if (MenuState == "Credits")
+            {
+                ChangingMenus = true;
+                MenuState = "CreditsToMain";
+                MoveTime = MovementTimer;
+            }
         }
+
+        
     }
 }
