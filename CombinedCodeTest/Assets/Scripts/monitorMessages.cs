@@ -7,10 +7,10 @@ public class monitorMessages : MonoBehaviour
 {
     public Text message;
     string[] messagechoice = new string[9] { "Let's ride!", "You're doing great!", "~You're a resonation sensation~", "Keep it up Zoombie!", "Vaporizing Speeds", "Resonating!", "Straight Vibin'", "That's the spirit!", "~Ok Zoomer~" };
-    int choiceCount = 1;
+    int choiceCount = 0;
     void Start()
     {
-        InvokeRepeating("messageCycle", 30.0f, 30.0f);
+        InvokeRepeating("messageCycle", 60.0f, 60.0f);
 
     }
     void Update()

@@ -11,33 +11,11 @@ public class monitor : MonoBehaviour
     float i;
     void Start() 
     {
-        InvokeRepeating("Rise",0f,30f);
-        InvokeRepeating("Fall", 10f, 30f);
     }
     void Update()
     {
-        Vector3 temp = new Vector3(-100, i, 200f);
-        switch (rising) 
-        {
-            case (true):
-                if (i < 50) 
-                {
-                    i= i + 0.15f;
-                }
-                break;
-            case (false):
-                if(i>-100)
-                i=i - 0.15f;
-                break;
-        }
+        Vector3 temp = new Vector3(0, 0, 500f);
+      
         CPUmonitor.transform.position = bike.transform.position+temp;
-    }
-    void Rise() 
-    {
-        rising = true;
-    }
-    void Fall()
-    {
-        rising = false;
     }
 }
