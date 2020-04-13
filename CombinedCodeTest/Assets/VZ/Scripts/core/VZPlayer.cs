@@ -73,6 +73,10 @@ public class VZPlayer : MonoBehaviour
     public GameObject[] cityTrrn;
     public GameObject[] artTrrn;
     public GameObject[] Coins;
+    private GameObject[] FloppyPrefabs;
+    private GameObject[] VirusPrefabs;
+    private GameObject[] PowerUpPrefabs;
+
 
     public float targetTime = 120.0f;
     int levelNo = 0;
@@ -314,10 +318,15 @@ public class VZPlayer : MonoBehaviour
       }
       else
          StartLevel();
+
+        FloppyPrefabs = Resources.LoadAll<GameObject>("Prefabs/FloppyDiskPrefabs");
+        VirusPrefabs = Resources.LoadAll<GameObject>("Prefabs/VirusPrefabs");
+        PowerUpPrefabs = Resources.LoadAll<GameObject>("Prefabs/PowerupPrefabs");
+
         #endregion
 
-    #region//Becker Arrays
-        
+        #region//Becker Arrays
+
         Terrains[0] = desertTrn[0];
         Terrains[1] = desertTrn[1];
         Terrains[2] = desertTrn[2];
@@ -341,11 +350,25 @@ public class VZPlayer : MonoBehaviour
             startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
             Vector3 spawnLocC = new Vector3(-0.26f, 0.33f, startZ + 25f);
+            int RandomCoin = UnityEngine.Random.Range(1, 4);
             //int random = UnityEngine.Random.Range(0, 4);
-            int randomC = UnityEngine.Random.Range(0, Coins.Length);
+            int randomF = UnityEngine.Random.Range(0, FloppyPrefabs.Length);
+            int randomV = UnityEngine.Random.Range(0, VirusPrefabs.Length);
+            int randomP = UnityEngine.Random.Range(0, PowerUpPrefabs.Length);
             UntilNewLevel -= 1; //Do we still need this here?
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
-            Instantiate(Coins[randomC], spawnLocC, Quaternion.Euler(0, 90, 0));
+            switch (RandomCoin)
+            {
+                case 1:
+                    Instantiate(FloppyPrefabs[randomF], spawnLocC, Quaternion.Euler(0, 90, 0));
+                    break;
+                case 2:
+                    Instantiate(VirusPrefabs[randomV], spawnLocC, Quaternion.Euler(0, 90, 0));
+                    break;
+                case 3:
+                    Instantiate(PowerUpPrefabs[randomP], spawnLocC, Quaternion.Euler(0, 90, 0));
+                    break;
+            }
             Debug.Log(UntilNewLevel);
         }
         //Delete Platform
