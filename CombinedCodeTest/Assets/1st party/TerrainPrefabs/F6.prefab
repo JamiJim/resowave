@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 1273276348488790279}
   - component: {fileID: 1273276348488790277}
   - component: {fileID: 1273276348488790276}
+  - component: {fileID: 513563676226484076}
+  - component: {fileID: 7566341711990141463}
   m_Layer: 0
   m_Name: F6
-  m_TagString: Untagged
+  m_TagString: DeleteTerrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -77,6 +79,31 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 8dc8a05c10cd7e147aba1684ea7c254b, type: 2}
   m_EnableTreeColliders: 1
+--- !u!114 &513563676226484076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273276348488790278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8506b4383c6be94fad1efb0d8d8bb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7566341711990141463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273276348488790278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 250, y: 1, z: 1}
+  m_Center: {x: 250, y: 0, z: 750}
 --- !u!1 &1273276348868145425
 GameObject:
   m_ObjectHideFlags: 0
