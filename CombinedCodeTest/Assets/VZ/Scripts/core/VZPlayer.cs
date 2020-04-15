@@ -72,7 +72,6 @@ public class VZPlayer : MonoBehaviour
     public GameObject[] desertTrn;
     public GameObject[] cityTrrn;
     public GameObject[] artTrrn;
-    public GameObject[] Coins;
     private GameObject[] FloppyPrefabs;
     private GameObject[] VirusPrefabs;
     private GameObject[] PowerUpPrefabs;
