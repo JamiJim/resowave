@@ -1750,6 +1750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7666844242054728366}
   - component: {fileID: 5891689381103536705}
+  - component: {fileID: 7023133081821553096}
   m_Layer: 0
   m_Name: PowerSet15
   m_TagString: Untagged
@@ -1813,6 +1814,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c14dbaf9b7af141b952a634dfac03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7023133081821553096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808305190620868368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4812ddeb30900574e8ed7b49b5734e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 15
+  amplitude: 0.2
+  frequency: 1
 --- !u!1 &4094014596067456211
 GameObject:
   m_ObjectHideFlags: 0

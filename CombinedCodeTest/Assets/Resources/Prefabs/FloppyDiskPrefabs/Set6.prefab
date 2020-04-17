@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2547514553317285995}
   - component: {fileID: 2108989600934442907}
-  - component: {fileID: 612514254566837126}
+  - component: {fileID: 8182461195957993819}
   m_Layer: 0
   m_Name: Set6
   m_TagString: Untagged
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c14dbaf9b7af141b952a634dfac03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &612514254566837126
+--- !u!114 &8182461195957993819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,7 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4812ddeb30900574e8ed7b49b5734e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DelayTimer: 3
+  degreesPerSecond: 15
+  amplitude: 0.2
+  frequency: 1
 --- !u!1001 &1043591500208676383
 PrefabInstance:
   m_ObjectHideFlags: 0

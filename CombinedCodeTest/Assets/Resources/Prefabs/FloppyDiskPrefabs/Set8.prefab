@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7984991322518802400}
   - component: {fileID: 4962648269797047446}
-  - component: {fileID: 1638492046261888813}
+  - component: {fileID: 1651737546600843330}
   m_Layer: 0
   m_Name: Set8
   m_TagString: Untagged
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c14dbaf9b7af141b952a634dfac03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1638492046261888813
+--- !u!114 &1651737546600843330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -396,7 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4812ddeb30900574e8ed7b49b5734e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DelayTimer: 3
+  degreesPerSecond: 15
+  amplitude: 0.2
+  frequency: 1
 --- !u!65 &3347895281305255239
 BoxCollider:
   m_ObjectHideFlags: 0
