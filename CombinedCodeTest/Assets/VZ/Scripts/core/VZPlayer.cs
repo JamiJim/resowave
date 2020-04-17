@@ -348,7 +348,7 @@ public class VZPlayer : MonoBehaviour
         {
             startZ += 50f;
             Vector3 spawnLoc = new Vector3(0, 0.1f, startZ);
-            Vector3 spawnLocC = new Vector3(-0.26f, 0.53f, startZ + 25f);
+            Vector3 spawnLocC = new Vector3(-0.26f, 0.33f, startZ + 25f);
             int RandomCoin = UnityEngine.Random.Range(1, 4);
             //int random = UnityEngine.Random.Range(0, 4);
             int randomF = UnityEngine.Random.Range(0, FloppyPrefabs.Length);
