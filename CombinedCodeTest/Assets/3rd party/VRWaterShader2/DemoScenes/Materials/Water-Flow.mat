@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Water-Flow
   m_Shader: {fileID: 4800000, guid: 58f047517fd799149bfc42cb67a78e41, type: 3}
   m_ShaderKeywords: BLEND_ADDITIVE BLEND_COLOR_ENABLED BLEND_ENABLED FOURTH_ENABLED
@@ -21,7 +22,7 @@ Material:
     m_TexEnvs:
     - _BaseTexture:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     - _BlendTexture:
         m_Texture: {fileID: 2800000, guid: 6d54b5c5d3ad7d943a96c0dfca899ad1, type: 3}
@@ -53,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionTexture:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 100, y: 100}
         m_Offset: {x: 0, y: 0}
     - _FirstWaveHeightmap:
         m_Texture: {fileID: 2800000, guid: d594323606034b0488f0240719eb5964, type: 3}
