@@ -330,6 +330,10 @@ public class VZPlayer : MonoBehaviour
         Terrains[1] = desertTrn[1];
         Terrains[2] = desertTrn[2];
         Terrains[3] = desertTrn[3];
+        Terrains[4] = desertTrn[4];
+        Terrains[5] = desertTrn[5];
+        Terrains[6] = desertTrn[6];
+        Terrains[7] = desertTrn[7];
         startZ = StartPlatform.position.z;
         UntilNewLevel = LevelLength;
     }
@@ -506,7 +510,7 @@ public class VZPlayer : MonoBehaviour
             UntilNewLevel = LevelLength;  //Resets the level length;
             startZT += 500;
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);
-            int randomT = UnityEngine.Random.Range(0, 4);
+            int randomT = UnityEngine.Random.Range(0, 8);
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
 
         }
