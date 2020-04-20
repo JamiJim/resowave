@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.1937
   m_CustomReflection: {fileID: 8900000, guid: 2cb4ef7c3efaf1f479c5f0beeed5ac0e, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.28967312, g: 0.14957249, b: 0.15479869, a: 0.1937}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -447,48 +447,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: Terrains.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[0]
+      propertyPath: artTrrn.Array.data[0]
       value: 
-      objectReference: {fileID: 3004446500654429178, guid: 5666fe177566c9a4c819fa6f1fbf0254,
+      objectReference: {fileID: 4747948703981847892, guid: 0eaba7fe49fc10f4fb81e8dc5d300f6c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[4]
+      propertyPath: artTrrn.Array.data[1]
       value: 
-      objectReference: {fileID: 1273276348488790278, guid: 2aa5a7de0bde024468525b179fb9d62f,
+      objectReference: {fileID: 7316464168243878000, guid: ce391bdfa6a2aa043bfede1571399e5c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[1]
+      propertyPath: artTrrn.Array.data[2]
       value: 
-      objectReference: {fileID: 5981747067458524369, guid: 1aec5c5a4d92cb2419b9d0904ca0bed6,
+      objectReference: {fileID: 4747948703981847892, guid: 0eaba7fe49fc10f4fb81e8dc5d300f6c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[2]
+      propertyPath: artTrrn.Array.data[3]
       value: 
-      objectReference: {fileID: 4025769210368961276, guid: 4781f69b5df2fb742a05990d37cd3844,
+      objectReference: {fileID: 7316464168243878000, guid: ce391bdfa6a2aa043bfede1571399e5c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[5]
+      propertyPath: artTrrn.Array.data[4]
       value: 
-      objectReference: {fileID: 725145028142319902, guid: 965d68f9046db7849a2543e7bf9ac4ec,
+      objectReference: {fileID: 4747948703981847892, guid: 0eaba7fe49fc10f4fb81e8dc5d300f6c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[3]
+      propertyPath: artTrrn.Array.data[5]
       value: 
-      objectReference: {fileID: 2737200779572422487, guid: 4a220916653c31f4dbc04ee78d857db5,
+      objectReference: {fileID: 7316464168243878000, guid: ce391bdfa6a2aa043bfede1571399e5c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[6]
+      propertyPath: artTrrn.Array.data[6]
       value: 
-      objectReference: {fileID: 6323286459698088829, guid: 29fff0e5414640d45bd3f4f6cc0e052d,
+      objectReference: {fileID: 4747948703981847892, guid: 0eaba7fe49fc10f4fb81e8dc5d300f6c,
         type: 3}
     - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[7]
+      propertyPath: artTrrn.Array.data[7]
       value: 
-      objectReference: {fileID: 5981747067458524369, guid: 1aec5c5a4d92cb2419b9d0904ca0bed6,
+      objectReference: {fileID: 7316464168243878000, guid: ce391bdfa6a2aa043bfede1571399e5c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}

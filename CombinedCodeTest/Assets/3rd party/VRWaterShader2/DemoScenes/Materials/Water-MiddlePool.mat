@@ -4,13 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: Water-MiddlePool
-  m_Shader: {fileID: 4800000, guid: 6babb0be21b262c4d8febfce60a39081, type: 3}
-  m_ShaderKeywords: SECOND_ENABLED THIRD_ENABLED _CULL_NONE _SECONDARYENABLETHIS_ON
-    _SECONDWAVEENABLETHIS_ON
+  m_Shader: {fileID: 4800000, guid: 58f047517fd799149bfc42cb67a78e41, type: 3}
+  m_ShaderKeywords: SECOND_ENABLED THIRD_ENABLED _BLENDENABLETHIS_ON _CULL_NONE _SECONDWAVEENABLETHIS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -34,10 +32,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _CubemapCustomCubemap:
         m_Texture: {fileID: 8900000, guid: 812e6833668935a47aa7761f51fd8f2a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CubemapReflectionCubemap:
-        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -108,14 +102,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _PrimaryHeightmap:
-        m_Texture: {fileID: 2800000, guid: 228b2c301ad35c9449ab45f3112f090e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _PrimaryNormalmap:
-        m_Texture: {fileID: 2800000, guid: 6ed99089d8d6dbf4bbeb2ecef32d71c1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SSRefractionStrengthMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -127,14 +113,6 @@ Material:
     - _SecondWaveNormalmap:
         m_Texture: {fileID: 2800000, guid: e301598b44ff05645941635071beb282, type: 3}
         m_Scale: {x: 2, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryHeightmap:
-        m_Texture: {fileID: 2800000, guid: 228b2c301ad35c9449ab45f3112f090e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SecondaryNormalmap:
-        m_Texture: {fileID: 2800000, guid: 6ed99089d8d6dbf4bbeb2ecef32d71c1, type: 3}
-        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThirdWaveHeightmap:
         m_Texture: {fileID: 2800000, guid: d594323606034b0488f0240719eb5964, type: 3}
@@ -156,7 +134,7 @@ Material:
     - _BumpScale: 1
     - _CubemapFresnel: 3.42
     - _CubemapGlossiness: 1
-    - _CubemapStrength: 0.617
+    - _CubemapStrength: 0
     - _CubemapUseCustomCubemap: 0
     - _Cull: 0
     - _Cutoff: 0.5
@@ -178,15 +156,12 @@ Material:
     - _OverallNormalStrength: 0.756
     - _OverallWaveHeight: 0.82
     - _Parallax: 0.02
-    - _PrimaryHeightStrength: 0.5
     - _SSRefractionDecaydistance: 5
     - _SSRefractionRefractionFresnel: 3.02
     - _SSRefractionStrength: 0.055
     - _SecondWaveEnableThis: 1
     - _SecondWaveHeightStrength: 0.1
     - _SecondWaveNormalStrength: 0.301
-    - _SecondaryEnableThis: 1
-    - _SecondaryHeightStrength: 0.5
     - _ShadowOffset: 0
     - _ShadowOpacityRatio: 1
     - _ShadowWaveFactor: 5
@@ -212,9 +187,7 @@ Material:
     - _FirstWaveUandVspeedZWNotused: {r: 0, g: 0, b: 0, a: 0}
     - _FourthWaveUandVspeed: {r: -0.05, g: -0.075, b: 0, a: 0}
     - _FourthWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
-    - _PrimaryUandVspeedZWNotused: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _SecondWaveUandVspeed: {r: -0.12, g: -0.082, b: 0, a: 0}
     - _SecondWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
-    - _SecondaryUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
     - _ThirdWaveUandVspeed: {r: -0.01, g: -0.1, b: 0, a: 0}
     - _ThirdWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
