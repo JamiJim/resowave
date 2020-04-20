@@ -525,7 +525,7 @@ public class VZPlayer : MonoBehaviour
     void loadNextLevelAssets()
     {
         Debug.Log("timer end");
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 8; i++)
         {
             switch (levelNo)
             {
