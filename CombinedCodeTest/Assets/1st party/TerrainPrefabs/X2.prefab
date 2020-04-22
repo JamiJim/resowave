@@ -3819,9 +3819,11 @@ GameObject:
   - component: {fileID: 2706150882902998184}
   - component: {fileID: 2706150882902998187}
   - component: {fileID: 2706150882902998186}
+  - component: {fileID: 4487918135987759368}
+  - component: {fileID: 1182422740826203899}
   m_Layer: 0
   m_Name: X2
-  m_TagString: Untagged
+  m_TagString: DeleteTerrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3919,6 +3921,31 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 367bbd61f0a5af24383742b84ee8d160, type: 2}
   m_EnableTreeColliders: 1
+--- !u!114 &4487918135987759368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706150882902998181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8506b4383c6be94fad1efb0d8d8bb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1182422740826203899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706150882902998181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 250, y: 1, z: 1}
+  m_Center: {x: 250, y: 0, z: 750}
 --- !u!1 &2706150882922885670
 GameObject:
   m_ObjectHideFlags: 0
