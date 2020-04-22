@@ -29,8 +29,7 @@ public class MenuControl : MonoBehaviour
     public Sprite ButtonSettingsLeft;
 
     public GameObject VisualSelection;
-    private Image SelectionEffect;
-    private Color SelectionColor;
+    private Slider SelectionSlider;
 
     public float SinModifier = 2f;
     private float modifier;
@@ -70,6 +69,9 @@ public class MenuControl : MonoBehaviour
     public Slider VolumeSlider;
     public Slider MusicSlider;
     public Slider SoundEffectSlider;
+    public float SelectionTime;
+
+    private readonly VZController Controller;
 
 
     // Start is called before the first frame update
@@ -77,8 +79,7 @@ public class MenuControl : MonoBehaviour
     {
         maxPosition = MenuItems.Length - 1;
         VisualButton = ButtonDisplay.GetComponent<Image>();
-        SelectionEffect = VisualSelection.GetComponent<Image>();
-        SelectionColor = SelectionEffect.material.color;
+        SelectionSlider = VisualSelection.GetComponentInChildren<Slider>();
         modifier = (Mathf.Sin(SinModifier) * Time.deltaTime);
         int i = 0;
         int j = 0;
@@ -100,6 +101,10 @@ public class MenuControl : MonoBehaviour
     {
         if (MenuState == "Main" || (MenuState == "Settings" && position == 3))
         {
+
+            if (Controller.DpadDown.Down){ //ATTTTTTTEMPT!!
+
+            }
 
             if (Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
             {
@@ -213,10 +218,7 @@ public class MenuControl : MonoBehaviour
 
             if (isSelecting == false)
             {
-                SelectionColor.r = 1;
-                SelectionColor.g = 0.258f;
-                SelectionColor.b = 0.862f;
-                SelectionColor.a = 0.4f;
+                SelectionSlider.value = 0;
                 ConfirmText.SetActive(false);
             }
 
@@ -230,13 +232,10 @@ public class MenuControl : MonoBehaviour
 
             if (isSelecting == true && ChangingMenus == false)
             {
-                SelectionColor.a += Time.deltaTime * 0.5f;
-                SelectionColor.r = 0;
-                SelectionColor.g = 1;
-                SelectionColor.b = 0;
+                SelectionSlider.value += ((SelectionSlider.maxValue / SelectionTime) * Time.deltaTime);
                 ConfirmText.SetActive(true);
             }
-            SelectionEffect.color = SelectionColor;
+            //SelectionEffect.color = SelectionColor;
         }
     }
 
@@ -405,7 +404,7 @@ public class MenuControl : MonoBehaviour
     {
         if (ChangingMenus == true && MenuState == "MainToCredits" && MoveTime > 0)
         {
-            SelectionEffect.transform.Translate(Vector3.down * Time.deltaTime * SelectionMoveAmount);
+            VisualSelection.transform.Translate(Vector3.down * Time.deltaTime * SelectionMoveAmount);
             foreach (GameObject credits in CreditsItems)
             {
                 credits.transform.Translate(Vector3.left * Time.deltaTime * SlideAmount * 3);
@@ -431,7 +430,7 @@ public class MenuControl : MonoBehaviour
 
         if (ChangingMenus == true && MenuState == "CreditsToMain" && MoveTime > 0)
         {
-            SelectionEffect.transform.Translate(Vector3.up * Time.deltaTime * SelectionMoveAmount);
+            VisualSelection.transform.Translate(Vector3.up * Time.deltaTime * SelectionMoveAmount);
             foreach (GameObject credits in CreditsItems)
             {
                 credits.transform.Translate(Vector3.right * Time.deltaTime * SlideAmount * 3);
@@ -609,7 +608,7 @@ public class MenuControl : MonoBehaviour
         SettingsVolume();
 
         //Controls what happens on each menu item.
-        if (SelectionColor.a >= 1)
+        if (SelectionSlider.value >= SelectionSlider.maxValue)
         {
             if (MenuState == "Main")
             {

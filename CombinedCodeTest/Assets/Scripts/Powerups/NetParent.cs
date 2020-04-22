@@ -17,6 +17,7 @@ public class NetParent : MonoBehaviour
     //Scales all of the net's children. Written as a function because it happens a LOT.
     void ScaleChildren(Vector3 Scale)
     {
+        ChildNets = GetComponentsInChildren<Transform>();
         foreach (Transform Net in ChildNets)
         {
             Net.transform.localScale += Scale;
@@ -53,7 +54,7 @@ public class NetParent : MonoBehaviour
         }
         if (ChildNets[0].transform.localScale.y >= 1 && HitMax == false)
         {
-            Debug.Log(ChildNets[0].transform.localScale.y);
+            //Debug.Log(ChildNets[0].transform.localScale.y);
             isMaxSized = true;
             ScaleChildren(new Vector3(0, this.transform.localScale.y * -1, 0));
             ScaleChildren(new Vector3(0, 1, 0));

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7656019799214149530}
   m_Layer: 0
   m_Name: RightNet
-  m_TagString: BassGrenade
+  m_TagString: RightNet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,6 +171,8 @@ MonoBehaviour:
   AllNets: []
   Lifetime: 12
   NetSide: 
+  ScaleSpeed: 2.2
+  ChildNets: []
 --- !u!1 &7656019800240573249
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +189,7 @@ GameObject:
   - component: {fileID: 7656019800240573252}
   m_Layer: 0
   m_Name: LeftNet
-  m_TagString: BassGrenade
+  m_TagString: LeftNet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
