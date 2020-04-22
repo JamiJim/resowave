@@ -446,50 +446,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: Terrains.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[0]
-      value: 
-      objectReference: {fileID: 3004446500654429178, guid: 5666fe177566c9a4c819fa6f1fbf0254,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[4]
-      value: 
-      objectReference: {fileID: 1273276348488790278, guid: 2aa5a7de0bde024468525b179fb9d62f,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[1]
-      value: 
-      objectReference: {fileID: 5981747067458524369, guid: 1aec5c5a4d92cb2419b9d0904ca0bed6,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[2]
-      value: 
-      objectReference: {fileID: 4025769210368961276, guid: 4781f69b5df2fb742a05990d37cd3844,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[5]
-      value: 
-      objectReference: {fileID: 725145028142319902, guid: 965d68f9046db7849a2543e7bf9ac4ec,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[3]
-      value: 
-      objectReference: {fileID: 2737200779572422487, guid: 4a220916653c31f4dbc04ee78d857db5,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[6]
-      value: 
-      objectReference: {fileID: 6323286459698088829, guid: 29fff0e5414640d45bd3f4f6cc0e052d,
-        type: 3}
-    - target: {fileID: 11406490, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
-      propertyPath: desertTrn.Array.data[7]
-      value: 
-      objectReference: {fileID: 5981747067458524369, guid: 1aec5c5a4d92cb2419b9d0904ca0bed6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3820ddc41bffb9d47ab34f161e54123e, type: 3}
 --- !u!1001 &260898069
@@ -504,6 +460,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: e2
       objectReference: {fileID: 0}
+    - target: {fileID: 4430438064909901481, guid: 2e8df409cc4a8e4489189203175c7aea,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbb9e795d62ad7043b42487f173edfc6, type: 2}
     - target: {fileID: 7667303296238527273, guid: 2e8df409cc4a8e4489189203175c7aea,
         type: 3}
       propertyPath: m_LocalPosition.x
