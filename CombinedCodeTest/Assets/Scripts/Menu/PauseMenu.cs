@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuControl : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     public GameObject[] MenuItems;
 
@@ -31,12 +31,10 @@ public class MenuControl : MonoBehaviour
     public GameObject VisualSelection;
     private Slider SelectionSlider;
 
-    public float SinModifier = 2f;
-    private float modifier;
     private bool isSelecting = false;
     private bool changeInSelection = false;
 
-    private int position = 1;
+    public int position = 1;
     private int maxPosition;
 
     public bool Selectable = true;
@@ -44,14 +42,13 @@ public class MenuControl : MonoBehaviour
     private float MoveTime;
     public float SelectTimer = 0;
     public GameObject ConfirmText;
-    private float transformAmount = 191;
+    public float transformAmount = 191;
     private string MoveDirection = "";
     private Vector3[] lastPositions;
     public float SlideAmount;
     public string MenuState = "Main";
     public bool ChangingMenus = false;
     public GameObject[] CreditsItems;
-    public GameObject BlackFade;
     public GameObject CenterTarget;
     public GameObject BackCenterTarget;
     public float SelectionMoveAmount;
@@ -70,32 +67,43 @@ public class MenuControl : MonoBehaviour
     public Slider MusicSlider;
     public Slider SoundEffectSlider;
     public float SelectionTime;
+    public float SettingsSlideAmount;
+    public bool Confirmed = true;
+    public GameObject Warning;
 
     private VZController Controller;
+    private TimeController Pause;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1.0f;
         maxPosition = MenuItems.Length - 1;
         VisualButton = ButtonDisplay.GetComponent<Image>();
         SelectionSlider = VisualSelection.GetComponentInChildren<Slider>();
         Controller = GameObject.FindGameObjectWithTag("VZController").GetComponent<VZController>();
-        modifier = (Mathf.Sin(SinModifier) * Time.deltaTime);
+        Pause = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<TimeController>();
         int i = 0;
         int j = 0;
         lastPositions = new Vector3[MenuItems.Length];
         SettingsLastPositions = new Vector3[SettingsItems.Length];
+        Debug.Log(SettingsLastPositions.Length);
         foreach (GameObject item in MenuItems)
         {
             lastPositions[i] = MenuItems[i].transform.position;
             i += 1;
+            item.SetActive(true);
         }
         foreach (GameObject settings in SettingsItems)
         {
             SettingsLastPositions[j] = SettingsItems[j].transform.position;
             j += 1;
+            settings.SetActive(false);
+        }
+        Warning.SetActive(false);
+        foreach (GameObject credits in CreditsItems)
+        {
+            credits.SetActive(false);
         }
     }
 
@@ -103,7 +111,7 @@ public class MenuControl : MonoBehaviour
     {
         if (direction == "up")
         {
-            if (Input.GetKey(KeyCode.UpArrow) || Controller.DpadUp.Down)
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Controller.DpadUp.Down)
             {
                 return true;
             }
@@ -114,7 +122,7 @@ public class MenuControl : MonoBehaviour
         }
         if (direction == "down")
         {
-            if (Input.GetKey(KeyCode.DownArrow) || Controller.DpadDown.Down)
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Controller.DpadDown.Down)
             {
                 return true;
             }
@@ -125,7 +133,7 @@ public class MenuControl : MonoBehaviour
         }
         if (direction == "left")
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Controller.DpadLeft.Down)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Controller.DpadLeft.Down)
             {
                 return true;
             }
@@ -136,7 +144,7 @@ public class MenuControl : MonoBehaviour
         }
         if (direction == "right")
         {
-            if (Input.GetKey(KeyCode.RightArrow) || Controller.DpadRight.Down)
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Controller.DpadRight.Down)
             {
                 return true;
             }
@@ -153,7 +161,7 @@ public class MenuControl : MonoBehaviour
 
     void VisualButtonControls()
     {
-        if (MenuState == "Main" || (MenuState == "Settings" && position == 3))
+        if (MenuState == "Main" || MenuState == "Credits" || (MenuState == "Settings" && position == 3))
         {
 
             if (CrossInput("up") && !CrossInput("down"))
@@ -184,40 +192,6 @@ public class MenuControl : MonoBehaviour
             if (!CrossInput("up") && !CrossInput("down") && !CrossInput("right") && !CrossInput("left") && !CrossInput("right"))
             {
                 VisualButton.sprite = ButtonNoInput;
-            }
-        }
-
-        if (MenuState == "MainToCredits" || MenuState == "Credits" || MenuState == "CreditsToMain" || MenuState == "MainToSettings" || MenuState == "SettingsToMain")
-        {
-
-            if (CrossInput("up") && !CrossInput("down"))
-            {
-                VisualButton.sprite = ButtonCreditsUp;
-            }
-
-            if (CrossInput("down") && !CrossInput("up"))
-            {
-                VisualButton.sprite = ButtonCreditsDown;
-            }
-
-            if (CrossInput("right") && !CrossInput("left") && (isSelecting == true || ChangingMenus == false))
-            {
-                VisualButton.sprite = ButtonCreditsRight;
-            }
-
-            if (CrossInput("right") && !CrossInput("left") && (isSelecting == false || ChangingMenus == true))
-            {
-                VisualButton.sprite = ButtonCreditsRightInactive;
-            }
-
-            if (CrossInput("left") && !CrossInput("right"))
-            {
-                VisualButton.sprite = ButtonCreditsLeft;
-            }
-
-            if (!CrossInput("up") && !CrossInput("down") && !CrossInput("right") && !CrossInput("left") && !CrossInput("right"))
-            {
-                VisualButton.sprite = ButtonCreditsNoInput;
             }
         }
 
@@ -258,7 +232,7 @@ public class MenuControl : MonoBehaviour
 
             if (!CrossInput("right"))
             {
-                isSelecting = false;
+                Confirmed = false;
             }
 
             if (ChangingMenus == true)
@@ -269,21 +243,14 @@ public class MenuControl : MonoBehaviour
             if (isSelecting == false)
             {
                 SelectionSlider.value = 0;
-                ConfirmText.SetActive(false);
             }
 
             if (CrossInput("right") && ChangingMenus == false)
             {
                 if (AdjustingVolume == false)
                 {
-                    isSelecting = true;
+                    Confirmed = true;
                 }
-            }
-
-            if (isSelecting == true && ChangingMenus == false)
-            {
-                SelectionSlider.value += ((SelectionSlider.maxValue / SelectionTime) * Time.deltaTime);
-                ConfirmText.SetActive(true);
             }
             //SelectionEffect.color = SelectionColor;
         }
@@ -323,15 +290,8 @@ public class MenuControl : MonoBehaviour
 
             if (Selectable == false)
             {
-                if (MoveDirection == "up" && MoveTime > 0)
+                if (MoveDirection == "up")
                 {
-                    foreach (GameObject item in MenuItems)
-                    {
-                        item.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount);
-                        MoveTime -= Time.deltaTime;
-                    }
-                    if (MoveTime <= 0)
-                    {
                         int i = 0;
                         foreach (GameObject item in MenuItems)
                         {
@@ -339,18 +299,10 @@ public class MenuControl : MonoBehaviour
                             item.transform.Translate(Vector3.down * transformAmount);
                             i += 1;
                         }
-                        Selectable = true;
-                    }
+                    Selectable = true;
                 }
-                if (MoveDirection == "down" && MoveTime > 0)
+                if (MoveDirection == "down")
                 {
-                    foreach (GameObject item in MenuItems)
-                    {
-                        item.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount);
-                        MoveTime -= Time.deltaTime;
-                    }
-                    if (MoveTime <= 0)
-                    {
                         int i = 0;
                         foreach (GameObject item in MenuItems)
                         {
@@ -358,9 +310,7 @@ public class MenuControl : MonoBehaviour
                             item.transform.Translate(Vector3.up * transformAmount);
                             i += 1;
                         }
-                        Selectable = true;
-                    }
-
+                    Selectable = true;
                 }
 
             }
@@ -406,15 +356,8 @@ public class MenuControl : MonoBehaviour
 
             if (Selectable == false)
             {
-                if (MoveDirection == "up" && MoveTime > 0)
+                if (MoveDirection == "up")
                 {
-                    foreach (GameObject settings in SettingsItems)
-                    {
-                        settings.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount);
-                        MoveTime -= Time.deltaTime;
-                    }
-                    if (MoveTime <= 0)
-                    {
                         int i = 0;
                         foreach (GameObject settings in SettingsItems)
                         {
@@ -423,17 +366,10 @@ public class MenuControl : MonoBehaviour
                             i += 1;
                         }
                         Selectable = true;
-                    }
+                    
                 }
-                if (MoveDirection == "down" && MoveTime > 0)
+                if (MoveDirection == "down")
                 {
-                    foreach (GameObject settings in SettingsItems)
-                    {
-                        settings.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount);
-                        MoveTime -= Time.deltaTime;
-                    }
-                    if (MoveTime <= 0)
-                    {
                         int i = 0;
                         foreach (GameObject settings in SettingsItems)
                         {
@@ -442,8 +378,64 @@ public class MenuControl : MonoBehaviour
                             i += 1;
                         }
                         Selectable = true;
-                    }
+                }
 
+            }
+        }
+
+        if (MenuState == "Credits")
+        {
+            if (CrossInput("up") && Selectable && (position > 0) && Selectable == true && isSelecting == false)
+            {
+                Selectable = false;
+                int i = 0;
+                /*foreach (GameObject credits in CreditsItems)
+                {
+                    lastPositions[i] = MenuItems[i].transform.position;
+                    i += 1;
+                }*/
+                position -= 1;
+                MoveDirection = "up";
+                MoveTime = MovementTimer;
+            }
+
+            if (CrossInput("down") && Selectable && (position < maxPosition) && Selectable == true && isSelecting == false)
+            {
+                Selectable = false;
+                int i = 0;
+                /*foreach (GameObject item in MenuItems)
+                {
+                    lastPositions[i] = MenuItems[i].transform.position;
+                    i += 1;
+                }*/
+                position += 1;
+                MoveDirection = "down";
+                MoveTime = MovementTimer;
+            }
+
+            if (Selectable == false)
+            {
+                if (MoveDirection == "up")
+                {
+                    int i = 0;
+                    foreach (GameObject credits in CreditsItems)
+                    {
+                        //credits.transform.position = lastPositions[i];
+                        credits.transform.Translate(Vector3.down * transformAmount);
+                        i += 1;
+                    }
+                    Selectable = true;
+                }
+                if (MoveDirection == "down")
+                {
+                    int i = 0;
+                    foreach (GameObject credits in CreditsItems)
+                    {
+                        //credits.transform.position = lastPositions[i];
+                        credits.transform.Translate(Vector3.up * transformAmount);
+                        i += 1;
+                    }
+                    Selectable = true;
                 }
 
             }
@@ -452,127 +444,77 @@ public class MenuControl : MonoBehaviour
 
     void CreditsMenu()
     {
-        if (ChangingMenus == true && MenuState == "MainToCredits" && MoveTime > 0)
+        if (ChangingMenus == true && MenuState == "MainToCredits")
         {
-            VisualSelection.transform.Translate(Vector3.down * Time.deltaTime * SelectionMoveAmount);
+            position = 1;
             foreach (GameObject credits in CreditsItems)
             {
-                credits.transform.Translate(Vector3.left * Time.deltaTime * SlideAmount * 3);
+                credits.SetActive(true);
             }
-            MoveTime -= Time.deltaTime;
 
             foreach (GameObject item in MenuItems)
             {
-                item.transform.Translate(Vector3.left * Time.deltaTime * SlideAmount * 3);
+                item.SetActive(false);
             }
+  
+            ChangingMenus = false;
+            MenuState = "Credits";
 
-            if (MoveTime <= 0)
-            {
-                int i = 0;
-
-                CreditsItems[0].transform.position = CenterTarget.transform.position;
-                CreditsItems[1].transform.position = BackCenterTarget.transform.position;
-                VisualSelection.transform.position = BackCenterTarget.transform.position;
-                ChangingMenus = false;
-                MenuState = "Credits";
-            }
         }
 
-        if (ChangingMenus == true && MenuState == "CreditsToMain" && MoveTime > 0)
+        if (ChangingMenus == true && MenuState == "CreditsToMain")
         {
-            VisualSelection.transform.Translate(Vector3.up * Time.deltaTime * SelectionMoveAmount);
+            Warning.SetActive(false);
             foreach (GameObject credits in CreditsItems)
             {
-                credits.transform.Translate(Vector3.right * Time.deltaTime * SlideAmount * 3);
+                credits.SetActive(false);
             }
-            MoveTime -= Time.deltaTime;
 
             foreach (GameObject item in MenuItems)
             {
-                item.transform.Translate(Vector3.right * Time.deltaTime * SlideAmount * 3);
+                item.SetActive(true);
             }
-
-            if (MoveTime <= 0)
-            {
-                int i = 0;
-                foreach (GameObject item in MenuItems)
-                {
-                    item.transform.position = lastPositions[i];
-                    i += 1;
-                }
-
-                VisualSelection.transform.position = MenuItems[2].transform.position;
-
-                foreach (GameObject credits in CreditsItems)
-                {
-                    credits.SetActive(false);
-                }
-                BlackFade.SetActive(false);
-                ChangingMenus = false;
-                MenuState = "Main";
-            }
+            maxPosition = (MenuItems.Length - 1);
+            ChangingMenus = false;
+            MenuState = "Main";
         }
     }
 
     void SettingsMenu()
     {
-        if (ChangingMenus == true && MenuState == "MainToSettings" && MoveTime > 0)
+        if (ChangingMenus == true && MenuState == "MainToSettings")
         {
-            foreach (GameObject settings in SettingsItems)
-            {
-                settings.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount * 3);
-            }
-            MoveTime -= Time.deltaTime;
-
             foreach (GameObject item in MenuItems)
             {
-                item.transform.Translate(Vector3.down * Time.deltaTime * SlideAmount * 3);
+                item.SetActive(false);
             }
 
-            if (MoveTime <= 0)
+            foreach (GameObject settings in SettingsItems)
             {
-                int i = 0;
-                SettingsItems[0].transform.position = MasterCenterTarget.transform.position;
-                SettingsItems[1].transform.position = MusicCenterTarget.transform.position;
-                SettingsItems[2].transform.position = SoundCenterTarget.transform.position;
-                SettingsItems[3].transform.position = SettingsBackCenterTarget.transform.position;
+                settings.SetActive(true);
+            }
+
                 ChangingMenus = false;
                 maxPosition = (SettingsItems.Length - 1);
                 MenuState = "Settings";
-            }
         }
 
-        if (ChangingMenus == true && MenuState == "SettingsToMain" && MoveTime > 0)
-        {
-            foreach (GameObject settings in SettingsItems)
-            {
-                settings.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount * 3);
-            }
-            MoveTime -= Time.deltaTime;
 
+        if (ChangingMenus == true && MenuState == "SettingsToMain")
+        {
             foreach (GameObject item in MenuItems)
             {
-                item.transform.Translate(Vector3.up * Time.deltaTime * SlideAmount * 3);
+                item.SetActive(true);
             }
 
-            if (MoveTime <= 0)
+            foreach (GameObject settings in SettingsItems)
             {
-                int i = 0;
-                foreach (GameObject item in MenuItems)
-                {
-                    item.transform.position = lastPositions[i];
-                    SettingsItems[i].transform.position = SettingsFirstPositions[i].transform.position;
-                    i += 1;
-                }
-
-                foreach (GameObject settings in SettingsItems)
-                {
-                    settings.SetActive(false);
-                }
-                BlackFade.SetActive(false);
-                ChangingMenus = false;
-                MenuState = "Main";
+                settings.SetActive(false);
             }
+
+            ChangingMenus = false;
+            maxPosition = (MenuItems.Length - 1);
+            MenuState = "Main";
         }
     }
 
@@ -581,12 +523,12 @@ public class MenuControl : MonoBehaviour
     {
         if (Selectable == true)
         {
-            
+
             if (CrossInput("right") && ChangingMenus == false && AdjustingVolume == true)
             {
                 if (position == 0)
                 {
-                    MasterVolume += Time.deltaTime * 30;
+                    MasterVolume += 10;
                     if (MasterVolume > 100)
                     {
                         MasterVolume = 100;
@@ -595,7 +537,7 @@ public class MenuControl : MonoBehaviour
                 }
                 if (position == 1)
                 {
-                    MusicVolume += Time.deltaTime * 30;
+                    MusicVolume += 10;
                     if (MusicVolume > 100)
                     {
                         MusicVolume = 100;
@@ -604,7 +546,7 @@ public class MenuControl : MonoBehaviour
                 }
                 if (position == 2)
                 {
-                    SoundEffectVolume += Time.deltaTime * 30;
+                    SoundEffectVolume += 10;
                     if (SoundEffectVolume > 100)
                     {
                         SoundEffectVolume = 100;
@@ -617,7 +559,7 @@ public class MenuControl : MonoBehaviour
             {
                 if (position == 0)
                 {
-                    MasterVolume -= Time.deltaTime * 30;
+                    MasterVolume -= 10;
                     if (MasterVolume < 0)
                     {
                         MasterVolume = 0;
@@ -626,7 +568,7 @@ public class MenuControl : MonoBehaviour
                 }
                 if (position == 1)
                 {
-                    MusicVolume -= Time.deltaTime * 30;
+                    MusicVolume -= 10;
                     if (MusicVolume < 0)
                     {
                         MusicVolume = 0;
@@ -635,7 +577,7 @@ public class MenuControl : MonoBehaviour
                 }
                 if (position == 2)
                 {
-                    SoundEffectVolume -= Time.deltaTime * 30;
+                    SoundEffectVolume -= 10;
                     if (SoundEffectVolume < 0)
                     {
                         SoundEffectVolume = 0;
@@ -646,7 +588,7 @@ public class MenuControl : MonoBehaviour
         }
     }
 
-    
+
 
     // Update is called once per frame
     void Update()
@@ -659,65 +601,60 @@ public class MenuControl : MonoBehaviour
         SettingsVolume();
 
         //Controls what happens on each menu item.
-        if (SelectionSlider.value >= SelectionSlider.maxValue)
+        if (Confirmed)
         {
             if (MenuState == "Main")
             {
                 if (position == 1)
                 {
-                    SceneManager.LoadScene("Test+Deletion");
+                    Pause.UnPauseGame();
+                    Destroy(this.gameObject);
                 }
 
                 if (position == 2)
                 {
                     MenuState = "MainToCredits";
                     ChangingMenus = true;
-                    MoveTime = MovementTimer;
-
+                    Warning.SetActive(true);
                     foreach (GameObject credits in CreditsItems)
                     {
                         credits.SetActive(true);
                     }
-                    BlackFade.SetActive(true);
-
-                    int i = 0;
                     foreach (GameObject item in MenuItems)
                     {
-                        lastPositions[i] = MenuItems[i].transform.position;
-                        i += 1;
+                        item.SetActive(false);
                     }
+                    maxPosition = (CreditsItems.Length - 1);
                 }
 
                 if (position == 0)
                 {
                     MenuState = "MainToSettings";
                     ChangingMenus = true;
-                    MoveTime = MovementTimer;
                     foreach (GameObject settings in SettingsItems)
                     {
                         settings.SetActive(true);
                     }
-                    BlackFade.SetActive(true);
-
-                    int i = 0;
                     foreach (GameObject item in MenuItems)
                     {
-                        lastPositions[i] = MenuItems[i].transform.position;
-                        i += 1;
+                        item.SetActive(false);
                     }
-                }
-
-                if (position == 3)
-                {
-                    Application.Quit();
                 }
             }
 
             if (MenuState == "Credits")
             {
-                ChangingMenus = true;
-                MenuState = "CreditsToMain";
-                MoveTime = MovementTimer;
+                if (position == 0)
+                {
+                    Application.Quit();
+                }
+                if (position == 1)
+                {
+                    ChangingMenus = true;
+                    MenuState = "CreditsToMain";
+                    position = 2;
+                    maxPosition = (MenuItems.Length - 1);
+                }
             }
 
             if (MenuState == "Settings")
@@ -726,13 +663,16 @@ public class MenuControl : MonoBehaviour
                 {
                     ChangingMenus = true;
                     MenuState = "SettingsToMain";
-                    MoveTime = MovementTimer;
                     position = 0;
                     maxPosition = (MenuItems.Length - 1);
+                    SettingsItems[0].transform.position = MasterCenterTarget.transform.position;
+                    SettingsItems[1].transform.position = MusicCenterTarget.transform.position;
+                    SettingsItems[2].transform.position = SoundCenterTarget.transform.position;
+                    SettingsItems[3].transform.position = SettingsBackCenterTarget.transform.position;
                 }
             }
         }
 
-        
+        Confirmed = false;
     }
 }

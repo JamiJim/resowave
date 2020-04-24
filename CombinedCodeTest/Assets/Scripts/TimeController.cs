@@ -11,6 +11,7 @@ public class TimeController : MonoBehaviour
     private float speed;
     //private float StartTimer = 10f;
     private float PauseTimer = 5f;
+    public GameObject PauseMenu;
 
     private Rigidbody rb;
     private void Awake()
@@ -56,25 +57,24 @@ public class TimeController : MonoBehaviour
         {
             Time.timeScale = 0;
             paused = true;
-
+            Instantiate(PauseMenu, this.gameObject.transform.position + new Vector3(517.2f, 289.3f, -505f), Quaternion.identity);
+            PauseTimer = 5f;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
         {
             UnPauseGame();
-        }
+        }*/
 
     }
 
-    void UnPauseGame()
+    public void UnPauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
             paused = !paused;
             Time.timeScale = 1;
-            PauseTimer = 5f;
-
-        }
+        //}
     }
 
 
