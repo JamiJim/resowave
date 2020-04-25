@@ -36,6 +36,7 @@ public class TimeController : MonoBehaviour
             else
             {
                 Time.timeScale = 0;
+                Instantiate(PauseMenu, this.gameObject.transform.position + new Vector3(517.2f, 289.3f, -505f), Quaternion.identity);
             }
 
 
