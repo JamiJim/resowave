@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4619662ccf01c4e848ce95e227a667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 0}
 --- !u!1 &1679194119
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +934,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2070593860767678613, guid: c9fdd08a7ccc8b84aa2309b0078f31d8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a214ec7526d9f884fad27142c70bf718, type: 2}
     - target: {fileID: 2706150882902998181, guid: c9fdd08a7ccc8b84aa2309b0078f31d8,
         type: 3}
       propertyPath: m_Name
@@ -993,6 +999,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5605155356232435782, guid: c9fdd08a7ccc8b84aa2309b0078f31d8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a214ec7526d9f884fad27142c70bf718, type: 2}
+    - target: {fileID: 9011441540911786075, guid: c9fdd08a7ccc8b84aa2309b0078f31d8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a214ec7526d9f884fad27142c70bf718, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9fdd08a7ccc8b84aa2309b0078f31d8, type: 3}
 --- !u!1001 &5774000709295063898
