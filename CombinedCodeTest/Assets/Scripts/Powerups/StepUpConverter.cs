@@ -21,7 +21,7 @@ public class StepUpConverter : MonoBehaviour
         }
 
         lifetime = Lifetime;
-        Player.ScoreMultiplier = 2; //The point values of every coin collected are doubled while this powerup is active.
+        Player.ScoreMultiplier = 1; //The point values of every coin collected are doubled while this powerup is active.
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class StepUpConverter : MonoBehaviour
             Converters = GameObject.FindGameObjectsWithTag("StepUpConverter"); //Multiples are checked for one last time...
             if (Converters.Length <= 1) //...though in this situation, there shouldn't ever be more than 1 active. Just in case though.
             {
-                Player.ScoreMultiplier = 1;
+                Player.ScoreMultiplier = 0.5f;
             }
             Destroy(this.gameObject);
         }
