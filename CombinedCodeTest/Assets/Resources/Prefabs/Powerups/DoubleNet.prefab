@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7769687124355502686}
   - component: {fileID: 7769687124355502657}
   m_Layer: 0
-  m_Name: Net
+  m_Name: DoubleNet
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ceac5ee61756b458c8653efdc49480ec, type: 2}
+  - {fileID: 2100000, guid: 30f96994dc641a445b63e3e4676d9cf5, type: 2}
+  - {fileID: 2100000, guid: 6d0eae481173da143b68dfc265210343, type: 2}
+  - {fileID: 2100000, guid: 1c4ecfb5a3872cc4c9eb104b2a8c5ad7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,8 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Effect: {fileID: 7656019799839237528, guid: fca6e7990345011458f18b07eb15fc46, type: 3}
-  MultiplesAllowed: 1
-  SingularTag: 
 --- !u!54 &7769687124355502657
 Rigidbody:
   m_ObjectHideFlags: 0
