@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Computer
       objectReference: {fileID: 0}
+    - target: {fileID: 856365191234717131, guid: 0de53f7189a9ad14890c6903f98efef4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3d26992fac91e84188321ba69b8006f, type: 2}
     - target: {fileID: 2636797423722545353, guid: 0de53f7189a9ad14890c6903f98efef4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -918,7 +923,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401998091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.88}
   m_LocalScale: {x: 0.19056734, y: 0.19056734, z: 0.19056734}
   m_Children: []
   m_Father: {fileID: 105568624}
