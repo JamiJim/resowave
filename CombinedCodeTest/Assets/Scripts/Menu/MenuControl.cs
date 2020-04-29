@@ -73,6 +73,10 @@ public class MenuControl : MonoBehaviour
 
     private VZController Controller;
 
+    public AudioSource audioSource;
+    public AudioClip SoundEffectTest;
+    private float SoundEffectTimer = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +89,9 @@ public class MenuControl : MonoBehaviour
         modifier = (Mathf.Sin(SinModifier) * Time.deltaTime);
         int i = 0;
         int j = 0;
+        VolumeSlider.value = MasterVolume;
+        MusicSlider.value = MusicVolume;
+        SoundEffectSlider.value = SoundEffectVolume;
         lastPositions = new Vector3[MenuItems.Length];
         SettingsLastPositions = new Vector3[SettingsItems.Length];
         foreach (GameObject item in MenuItems)
@@ -581,7 +588,6 @@ public class MenuControl : MonoBehaviour
     {
         if (Selectable == true)
         {
-            
             if (CrossInput("right") && ChangingMenus == false && AdjustingVolume == true)
             {
                 if (position == 0)
@@ -592,6 +598,7 @@ public class MenuControl : MonoBehaviour
                         MasterVolume = 100;
                     }
                     VolumeSlider.value = MasterVolume;
+                    audioSource.volume = (MasterVolume * 0.01f);
                 }
                 if (position == 1)
                 {
@@ -609,6 +616,12 @@ public class MenuControl : MonoBehaviour
                     {
                         SoundEffectVolume = 100;
                     }
+                    SoundEffectTimer -= Time.deltaTime;
+                    if (SoundEffectTimer <= 0)
+                    {
+                        audioSource.PlayOneShot(SoundEffectTest, (MenuControl.SoundEffectVolume * 0.01f));
+                        SoundEffectTimer = 0.5f;
+                    }
                     SoundEffectSlider.value = SoundEffectVolume;
                 }
             }
@@ -623,6 +636,7 @@ public class MenuControl : MonoBehaviour
                         MasterVolume = 0;
                     }
                     VolumeSlider.value = MasterVolume;
+                    audioSource.volume = (MasterVolume * 0.01f);
                 }
                 if (position == 1)
                 {
@@ -641,8 +655,18 @@ public class MenuControl : MonoBehaviour
                         SoundEffectVolume = 0;
                     }
                     SoundEffectSlider.value = SoundEffectVolume;
+                    SoundEffectTimer -= Time.deltaTime;
+                    if (SoundEffectTimer <= 0)
+                    {
+                        audioSource.PlayOneShot(SoundEffectTest, (MenuControl.SoundEffectVolume * 0.01f));
+                        SoundEffectTimer = 0.5f;
+                    }
                 }
             }
+        }
+        if (!CrossInput("left") && (!CrossInput("right")))
+        {
+            SoundEffectTimer = 0;
         }
     }
 

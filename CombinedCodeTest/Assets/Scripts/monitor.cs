@@ -14,7 +14,7 @@ public class monitor : MonoBehaviour
     }
     void Update()
     {
-        Vector3 temp = new Vector3(0, 0, 500f);
+        Vector3 temp = new Vector3(-5, 0, 10f);
       
         CPUmonitor.transform.position = bike.transform.position+temp;
     }

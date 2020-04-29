@@ -57,9 +57,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject MusicCenterTarget;
     public GameObject SoundCenterTarget;
     public GameObject SettingsBackCenterTarget;
-    public static float MasterVolume = 100;
-    public static float MusicVolume = 100;
-    public static float SoundEffectVolume = 100;
     private Vector3[] SettingsLastPositions;
     public GameObject[] SettingsFirstPositions;
     public bool AdjustingVolume = false;
@@ -74,6 +71,9 @@ public class PauseMenu : MonoBehaviour
     private VZController Controller;
     private TimeController Pause;
 
+    private AudioSource audioSource;
+    public AudioClip SoundEffectTest;
+
 
     // Start is called before the first frame update
     void Start()
@@ -83,8 +83,12 @@ public class PauseMenu : MonoBehaviour
         SelectionSlider = VisualSelection.GetComponentInChildren<Slider>();
         Controller = GameObject.FindGameObjectWithTag("VZController").GetComponent<VZController>();
         Pause = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<TimeController>();
+        audioSource = GameObject.FindGameObjectWithTag("BikeInputCont").GetComponent<AudioSource>();
         int i = 0;
         int j = 0;
+        VolumeSlider.value = MenuControl.MasterVolume;
+        MusicSlider.value = MenuControl.MusicVolume;
+        SoundEffectSlider.value = MenuControl.SoundEffectVolume;
         lastPositions = new Vector3[MenuItems.Length];
         SettingsLastPositions = new Vector3[SettingsItems.Length];
         Debug.Log(SettingsLastPositions.Length);
@@ -528,30 +532,32 @@ public class PauseMenu : MonoBehaviour
             {
                 if (position == 0)
                 {
-                    MasterVolume += 10;
-                    if (MasterVolume > 100)
+                    MenuControl.MasterVolume += 10;
+                    if (MenuControl.MasterVolume > 100)
                     {
-                        MasterVolume = 100;
+                        MenuControl.MasterVolume = 100;
                     }
-                    VolumeSlider.value = MasterVolume;
+                    VolumeSlider.value = MenuControl.MasterVolume;
+                    audioSource.volume = (MenuControl.MasterVolume * 0.01f);
                 }
                 if (position == 1)
                 {
-                    MusicVolume += 10;
-                    if (MusicVolume > 100)
+                    MenuControl.MusicVolume += 10;
+                    if (MenuControl.MusicVolume > 100)
                     {
-                        MusicVolume = 100;
+                        MenuControl.MusicVolume = 100;
                     }
-                    MusicSlider.value = MusicVolume;
+                    MusicSlider.value = MenuControl.MusicVolume;
                 }
                 if (position == 2)
                 {
-                    SoundEffectVolume += 10;
-                    if (SoundEffectVolume > 100)
+                    MenuControl.SoundEffectVolume += 10;
+                    if (MenuControl.SoundEffectVolume > 100)
                     {
-                        SoundEffectVolume = 100;
+                        MenuControl.SoundEffectVolume = 100;
                     }
-                    SoundEffectSlider.value = SoundEffectVolume;
+                    SoundEffectSlider.value = MenuControl.SoundEffectVolume;
+                    audioSource.PlayOneShot(SoundEffectTest, (MenuControl.SoundEffectVolume * 0.01f));
                 }
             }
 
@@ -559,30 +565,32 @@ public class PauseMenu : MonoBehaviour
             {
                 if (position == 0)
                 {
-                    MasterVolume -= 10;
-                    if (MasterVolume < 0)
+                    MenuControl.MasterVolume -= 10;
+                    if (MenuControl.MasterVolume < 0)
                     {
-                        MasterVolume = 0;
+                        MenuControl.MasterVolume = 0;
                     }
-                    VolumeSlider.value = MasterVolume;
+                    VolumeSlider.value = MenuControl.MasterVolume;
+                    audioSource.volume = (MenuControl.MasterVolume * 0.01f);
                 }
                 if (position == 1)
                 {
-                    MusicVolume -= 10;
-                    if (MusicVolume < 0)
+                    MenuControl.MusicVolume -= 10;
+                    if (MenuControl.MusicVolume < 0)
                     {
-                        MusicVolume = 0;
+                        MenuControl.MusicVolume = 0;
                     }
-                    MusicSlider.value = MusicVolume;
+                    MusicSlider.value = MenuControl.MusicVolume;
                 }
                 if (position == 2)
                 {
-                    SoundEffectVolume -= 10;
-                    if (SoundEffectVolume < 0)
+                    MenuControl.SoundEffectVolume -= 10;
+                    if (MenuControl.SoundEffectVolume < 0)
                     {
-                        SoundEffectVolume = 0;
+                        MenuControl.SoundEffectVolume = 0;
                     }
-                    SoundEffectSlider.value = SoundEffectVolume;
+                    SoundEffectSlider.value = MenuControl.SoundEffectVolume;
+                    audioSource.PlayOneShot(SoundEffectTest, (MenuControl.SoundEffectVolume * 0.01f));
                 }
             }
         }

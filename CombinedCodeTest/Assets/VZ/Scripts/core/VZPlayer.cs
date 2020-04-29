@@ -86,8 +86,8 @@ public class VZPlayer : MonoBehaviour
     private int UntilNewLevel; //Do we still need this here?
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public bool BeginTransition = false;
-    public   int Score = 0;
-    public int ScoreMultiplier = 1;
+    public float Score = 0;
+    public float ScoreMultiplier = 0.5f;
     public int VirusDecrement = 128; //The amount of points the player loses if they touch a virus.
 
     public AudioSource aSource;
@@ -336,6 +336,7 @@ public class VZPlayer : MonoBehaviour
         Terrains[7] = desertTrn[7];
         startZ = StartPlatform.position.z;
         UntilNewLevel = LevelLength;
+        aSource.volume = MenuControl.MasterVolume * 0.01f;
     }
 
     #endregion
@@ -387,32 +388,32 @@ public class VZPlayer : MonoBehaviour
         {
             Destroy(other.gameObject);
             Score += 2 * ScoreMultiplier;
-            aSource.PlayOneShot(aSound[0], 1.0f);
+            aSource.PlayOneShot(aSound[0], (MenuControl.SoundEffectVolume * 0.01f));
 
         }
         if (other.gameObject.CompareTag("4Bit"))
         {
             Destroy(other.gameObject);
             Score += 4 * ScoreMultiplier;
-            aSource.PlayOneShot(aSound[1], 1.0f);
+            aSource.PlayOneShot(aSound[1], (MenuControl.SoundEffectVolume * 0.01f));
         }
         if (other.gameObject.CompareTag("8Bit"))
         {
             Destroy(other.gameObject);
             Score += 8 * ScoreMultiplier;
-            aSource.PlayOneShot(aSound[2], 1.0f);
+            aSource.PlayOneShot(aSound[2], (MenuControl.SoundEffectVolume * 0.01f));
         }
         if (other.gameObject.CompareTag("16Bit"))
         {
             Destroy(other.gameObject);
             Score += 16 * ScoreMultiplier;
-            aSource.PlayOneShot(aSound[3], 1.0f);
+            aSource.PlayOneShot(aSound[3], (MenuControl.SoundEffectVolume * 0.01f));
         }
         if (other.gameObject.CompareTag("32Bit"))
         {
             Destroy(other.gameObject);
             Score += 32 * ScoreMultiplier;
-            aSource.PlayOneShot(aSound[4], 1.0f);
+            aSource.PlayOneShot(aSound[4], (MenuControl.SoundEffectVolume * 0.01f));
         }
         if (other.gameObject.CompareTag("Virus"))
         {
@@ -425,19 +426,19 @@ public class VZPlayer : MonoBehaviour
                 Score -= VirusDecrement;
             }
             Destroy(other.gameObject);
-            aSource.PlayOneShot(aSound[5], 1.0f);
+            aSource.PlayOneShot(aSound[5], (MenuControl.SoundEffectVolume * 0.01f));
             Script.ChangeMat();
         }
         if (other.gameObject.CompareTag("Powerup") && other.gameObject.layer == 9)
         {
             
-                aSource.PlayOneShot(aSound[6], 1.0f);
+                aSource.PlayOneShot(aSound[6], (MenuControl.SoundEffectVolume * 0.01f));
             
         }
         if (other.gameObject.CompareTag("Powerup") && other.gameObject.layer == 10)
         {
             
-                aSource.PlayOneShot(aSound[7], 1.0f);
+                aSource.PlayOneShot(aSound[7], (MenuControl.SoundEffectVolume * 0.01f));
             Script.ReturnMat();
             
         }
