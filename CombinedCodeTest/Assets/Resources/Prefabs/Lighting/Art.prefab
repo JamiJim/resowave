@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4174920942290802847
+--- !u!1 &6292422827447504744
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4436708330662209586}
-  - component: {fileID: 8852367464252368961}
+  - component: {fileID: 5994638529993867205}
+  - component: {fileID: 1475645818399145910}
   m_Layer: 0
-  m_Name: CitySky
+  m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4436708330662209586
+--- !u!4 &5994638529993867205
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4174920942290802847}
+  m_GameObject: {fileID: 6292422827447504744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,25 +31,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8852367464252368961
+--- !u!114 &1475645818399145910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4174920942290802847}
+  m_GameObject: {fileID: 6292422827447504744}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 153476a90fddeaa419d7d5cc5957f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: City
-  FrontTex: {fileID: 2800000, guid: 3d08969147bd4b84d9d920b6f4a18d1c, type: 3}
-  BackTex: {fileID: 2800000, guid: 112d73a9398c80e458a2ea159bce3540, type: 3}
-  UpTex: {fileID: 2800000, guid: 0fce3ad5729d95d409d55ca46b26105a, type: 3}
-  DownTex: {fileID: 2800000, guid: 6d65ca28a6f741044a92ca674f8be6be, type: 3}
-  LeftTex: {fileID: 2800000, guid: 7aa951e73bd81244ca07dda04d212995, type: 3}
-  RightTex: {fileID: 2800000, guid: dcf2766ec9e52a24f80ff650271f5b69, type: 3}
+  LevelName: ART
+  FrontTex: {fileID: 2800000, guid: 3fbd750250cf2594284eba57ebce440d, type: 3}
+  BackTex: {fileID: 2800000, guid: ab8fad0aaac36c144bbffbf9160dceb9, type: 3}
+  UpTex: {fileID: 2800000, guid: b1aec34105cc93b4287b37bb1331e1f8, type: 3}
+  DownTex: {fileID: 2800000, guid: e2f0d16d4235e4945b9ed4e080568812, type: 3}
+  LeftTex: {fileID: 2800000, guid: 8031d76ad9597e74ba809bc647e8a429, type: 3}
+  RightTex: {fileID: 2800000, guid: 124726e57d29aba40ba075fbb952ebd7, type: 3}
   NewLevelCubeMapTransition:
   - {fileID: 8900000, guid: 2cb4ef7c3efaf1f479c5f0beeed5ac0e, type: 3}
   FinalCubeMap: {fileID: 8900000, guid: d6a756fdbd939b040a8c6c9963e3edae, type: 3}

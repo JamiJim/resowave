@@ -78,12 +78,19 @@ public class VZPlayer : MonoBehaviour
 
 
     public float targetTime = 120.0f;
-    int levelNo = 0;
+    public int levelNo = 0;
+    private int TerrainNo = 0;
+    private bool EnteringNewLevel = false;
 
     public Transform StartPlatform;
 
     public int LevelLength = 10;
     private int UntilNewLevel; //Do we still need this here?
+    public int TerrainLoadsBeforeNewLevel = 4; //How long the level is, in terms of HOW many terrains are loaded.
+    private int NewTerrain;
+    public GameObject Trigger; //The Level transition trigger.
+
+
     public GameObject NewSkybox; //This should be the "NewSkybox" GameObject.
     public bool BeginTransition = false;
     public float Score = 0;
@@ -92,6 +99,7 @@ public class VZPlayer : MonoBehaviour
 
     public AudioSource aSource;
     public AudioClip[] aSound;
+    
 
     #endregion
 
@@ -337,6 +345,7 @@ public class VZPlayer : MonoBehaviour
         startZ = StartPlatform.position.z;
         UntilNewLevel = LevelLength;
         aSource.volume = MenuControl.MasterVolume * 0.01f;
+        NewTerrain = TerrainLoadsBeforeNewLevel;
     }
 
     #endregion
@@ -360,6 +369,10 @@ public class VZPlayer : MonoBehaviour
             int randomV = UnityEngine.Random.Range(0, VirusPrefabs.Length);
             int randomP = UnityEngine.Random.Range(0, PowerUpPrefabs.Length);
             UntilNewLevel -= 1; //Do we still need this here?
+           /* if (UntilNewLevel == 1 && NewTerrain == 1)
+            {
+                Instantiate(Trigger, spawnLoc, Quaternion.Euler(0, 90, 0));
+            } */
             Instantiate(Platforms[0], spawnLoc, Quaternion.Euler(0, 90, 0));
             switch (RandomCoin)
             {
@@ -471,12 +484,14 @@ public class VZPlayer : MonoBehaviour
 
         targetTime -= Time.deltaTime;
 
-        if (targetTime <= 0.0f && BeginTransition == false)
+        /*if (targetTime <= 0.0f && BeginTransition == false)
         {
             Instantiate(NewSkybox, this.gameObject.transform.position, this.gameObject.transform.rotation); //Begins the skybox transition.
             BeginTransition = true; //This is necessary, or else the objects will keep appearing.
-        }
-        if (targetTime <= 0.0f)
+        }*/
+
+        //FIGURED IT OUT! Get the TRIGGER to do this instead!
+       /* if (targetTime <= 0.0f)
         {
             if (levelNo == 2)
             {
@@ -487,9 +502,7 @@ public class VZPlayer : MonoBehaviour
                 levelNo++;
             }
             targetTime = 120.0f;
-            loadNextLevelAssets();
-            BeginTransition = false; //Prepares the next transition for when it's ready.
-        }
+        }*/
         if (Input.GetButtonDown("-"))
         {
             if (speed != 0)
@@ -513,6 +526,27 @@ public class VZPlayer : MonoBehaviour
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);
             int randomT = UnityEngine.Random.Range(0, 8);
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
+            NewTerrain -= 1;
+            if (EnteringNewLevel == true)
+            {
+                Instantiate(Trigger, spawnLoc, Quaternion.Euler(0, 90, 0));
+                EnteringNewLevel = false;
+            }
+            if (NewTerrain <= 0)
+            {
+                if (TerrainNo == 2)
+                {
+                    TerrainNo = 0;
+                }
+                else
+                {
+                    TerrainNo++;
+                }
+                loadNextLevelAssets();
+                BeginTransition = false; //Prepares the next transition for when it's ready.
+                EnteringNewLevel = true;
+                NewTerrain = TerrainLoadsBeforeNewLevel;
+            }
 
         }
         #endregion 
@@ -532,7 +566,7 @@ public class VZPlayer : MonoBehaviour
         Debug.Log("timer end");
         for (int i = 0; i < 8; i++)
         {
-            switch (levelNo)
+            switch (TerrainNo)
             {
                 case 1:
                     Terrains[i] = cityTrrn[i];
