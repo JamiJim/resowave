@@ -51,7 +51,6 @@ public class MenuControl : MonoBehaviour
     public string MenuState = "Main";
     public bool ChangingMenus = false;
     public GameObject[] CreditsItems;
-    public GameObject BlackFade;
     public GameObject CenterTarget;
     public GameObject BackCenterTarget;
     public float SelectionMoveAmount;
@@ -514,7 +513,6 @@ public class MenuControl : MonoBehaviour
                 {
                     credits.SetActive(false);
                 }
-                BlackFade.SetActive(false);
                 ChangingMenus = false;
                 MenuState = "Main";
             }
@@ -576,7 +574,6 @@ public class MenuControl : MonoBehaviour
                 {
                     settings.SetActive(false);
                 }
-                BlackFade.SetActive(false);
                 ChangingMenus = false;
                 MenuState = "Main";
             }
@@ -702,7 +699,6 @@ public class MenuControl : MonoBehaviour
                     {
                         credits.SetActive(true);
                     }
-                    BlackFade.SetActive(true);
 
                     int i = 0;
                     foreach (GameObject item in MenuItems)
@@ -721,7 +717,6 @@ public class MenuControl : MonoBehaviour
                     {
                         settings.SetActive(true);
                     }
-                    BlackFade.SetActive(true);
 
                     int i = 0;
                     foreach (GameObject item in MenuItems)
