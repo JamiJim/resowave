@@ -96,6 +96,7 @@ public class VZPlayer : MonoBehaviour
     public float Score = 0;
     public float ScoreMultiplier = 0.5f;
     public int VirusDecrement = 128; //The amount of points the player loses if they touch a virus.
+    private int LastTerrain = -1; //This prevents the same terrain from loading twice in a row.
 
     public AudioSource aSource;
     public AudioClip[] aSound;
@@ -525,6 +526,11 @@ public class VZPlayer : MonoBehaviour
             startZT += 500;
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);
             int randomT = UnityEngine.Random.Range(0, 8);
+            while (randomT == LastTerrain)
+            {
+                randomT = UnityEngine.Random.Range(0, 8); //Prevents the same terrain from loading twice in a row.
+            }
+            LastTerrain = randomT;
             Instantiate(Terrains[randomT], spawnLoc, Quaternion.identity);
             NewTerrain -= 1;
             if (EnteringNewLevel == true)

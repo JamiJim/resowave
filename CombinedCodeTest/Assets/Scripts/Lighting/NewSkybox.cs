@@ -38,12 +38,7 @@ public class NewSkybox : MonoBehaviour
         LastLevelLightsLights = LastLevelLights.GetComponentsInChildren<Light>();
 
         //Prepares the Fade Effect for the New Level's Skybox.
-        skyboxFade.SetTexture("_FrontTex2", SkyboxList[NextLevel].FrontTex);
-        skyboxFade.SetTexture("_BackTex2", SkyboxList[NextLevel].BackTex);
-        skyboxFade.SetTexture("_UpTex2", SkyboxList[NextLevel].UpTex);
-        skyboxFade.SetTexture("_DownTex2", SkyboxList[NextLevel].DownTex);
-        skyboxFade.SetTexture("_LeftTex2", SkyboxList[NextLevel].LeftTex);
-        skyboxFade.SetTexture("_RightTex2", SkyboxList[NextLevel].RightTex);
+        skyboxFade.SetTexture("_Tex2", SkyboxList[NextLevel].SkyboxTexture);
 
         //The lights used by the new skybox go here.
         Instantiate(SkyboxList[NextLevel].Lights, this.transform.position, this.transform.rotation);
@@ -88,12 +83,7 @@ public class NewSkybox : MonoBehaviour
         if (sbFade >= 1)
         {
             RenderSettings.customReflection = SkyboxList[NextLevel].FinalCubeMap; //Set the new level's cubemap.
-            skyboxFade.SetTexture("_FrontTex", skyboxFade.GetTexture("_FrontTex2"));
-            skyboxFade.SetTexture("_BackTex", skyboxFade.GetTexture("_BackTex2"));
-            skyboxFade.SetTexture("_UpTex", skyboxFade.GetTexture("_UpTex2"));
-            skyboxFade.SetTexture("_DownTex", skyboxFade.GetTexture("_DownTex2"));
-            skyboxFade.SetTexture("_LeftTex", skyboxFade.GetTexture("_LeftTex2"));
-            skyboxFade.SetTexture("_RightTex", skyboxFade.GetTexture("_RightTex2"));
+            skyboxFade.SetTexture("_Tex1", skyboxFade.GetTexture("_Tex2"));
             skyboxFade.SetFloat("_Blend", 0); //Sets up the skybox for the next transition, whenever that may be.
             NextLevel += 1; //Get the next level in the list set up for when the level changes again.
             Destroy(LastLevelLights); //With the old lights out of view, remove them from the scene.
