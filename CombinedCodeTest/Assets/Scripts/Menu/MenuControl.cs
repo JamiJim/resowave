@@ -75,6 +75,7 @@ public class MenuControl : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip SoundEffectTest;
     private float SoundEffectTimer = 0f;
+    private CreditsScroll CreditsText;
 
 
     // Start is called before the first frame update
@@ -85,6 +86,7 @@ public class MenuControl : MonoBehaviour
         VisualButton = ButtonDisplay.GetComponent<Image>();
         SelectionSlider = VisualSelection.GetComponentInChildren<Slider>();
         Controller = GameObject.FindGameObjectWithTag("VZController").GetComponent<VZController>();
+        CreditsText = CreditsItems[0].GetComponentInChildren<CreditsScroll>();
         modifier = (Mathf.Sin(SinModifier) * Time.deltaTime);
         int i = 0;
         int j = 0;
@@ -511,6 +513,7 @@ public class MenuControl : MonoBehaviour
 
                 foreach (GameObject credits in CreditsItems)
                 {
+                    CreditsText.ResetCredits();
                     credits.SetActive(false);
                 }
                 ChangingMenus = false;
