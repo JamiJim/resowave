@@ -27,11 +27,11 @@ public class SuspiciousEmail : MonoBehaviour
             {
                 Player.Score -= Player.VirusDecrement;
             }
-            Debug.Log("Virus!");
+            //Debug.Log("Virus!");
         }
         else {
             Instantiate(Effects[RandomRange], this.transform.position, Quaternion.identity); //A random powerup effect is used, from a list specified in the editor.
-            Debug.Log("Power-Up!");
+            //Debug.Log("Power-Up!");
         }
         //aSource.PlayOneShot(aSound, 1.0f);
         Destroy(this.gameObject);

@@ -326,7 +326,7 @@ public class VZController : MonoBehaviour
    {
       if (!IsHeadTracked())
       {
-         Debug.LogError("Can't recenter if head isn't tracked");
+         //Debug.LogError("Can't recenter if head isn't tracked");
          return;
       }
 
@@ -1442,7 +1442,7 @@ public class VZController : MonoBehaviour
       }
       catch (Exception e)
       {
-         Debug.LogError("Invalid date format: " + date + " (" + stripped + ")");
+         //Debug.LogError("Invalid date format: " + date + " (" + stripped + ")");
          dt = new DateTime();
       }
 
@@ -1454,7 +1454,7 @@ public class VZController : MonoBehaviour
 #if VZ_ARCADE || VZ_STREETVIEW
       VZUtl.Log(msg);
 #else
-      Debug.Log(msg);
+      //Debug.Log(msg);
 #endif
    }
 
@@ -1509,7 +1509,7 @@ public class VZController : MonoBehaviour
 
    void SetupVR()
    {
-      Debug.Log("SetupVR " + VRSettingsLoadedDeviceName() + " " + VRDeviceIsPresent());
+      //Debug.Log("SetupVR " + VRSettingsLoadedDeviceName() + " " + VRDeviceIsPresent());
 
       // Setup hmd
 #if VZ_ARCADE && !VZ_MOBILE

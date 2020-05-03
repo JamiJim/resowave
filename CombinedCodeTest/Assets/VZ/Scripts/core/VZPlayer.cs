@@ -387,7 +387,7 @@ public class VZPlayer : MonoBehaviour
                     Instantiate(PowerUpPrefabs[randomP], spawnLocC, Quaternion.Euler(0, 90, 0));
                     break;
             }
-            Debug.Log(UntilNewLevel);
+            //Debug.Log(UntilNewLevel);
         }
         //Delete Platform
 
@@ -508,12 +508,12 @@ public class VZPlayer : MonoBehaviour
         {
             if (speed != 0)
             { speed = speed - 5; }
-            Debug.Log("Decelerating");
+            //Debug.Log("Decelerating");
         }
         if (Input.GetButtonDown("+"))
         {
             speed = speed + 5;
-            Debug.Log("Accelerating");
+            //Debug.Log("Accelerating");
         }
         //Debug.Log("Speed: " + speed);
 
@@ -521,7 +521,7 @@ public class VZPlayer : MonoBehaviour
         //Didn't we change levels to work on a timer, rather than distance? Do we still need this here?
         if (UntilNewLevel <= 0)
         {
-            Debug.Log("Entered");
+           // Debug.Log("Entered");
             UntilNewLevel = LevelLength;  //Resets the level length;
             startZT += 500;
             Vector3 spawnLoc = new Vector3(-250, 0, startZT);
@@ -569,7 +569,7 @@ public class VZPlayer : MonoBehaviour
     #region //Becker Function LoadNextLevelAssests()
     void loadNextLevelAssets()
     {
-        Debug.Log("timer end");
+        //Debug.Log("timer end");
         for (int i = 0; i < 8; i++)
         {
             switch (TerrainNo)

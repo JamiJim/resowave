@@ -91,7 +91,7 @@ public class PauseMenu : MonoBehaviour
         SoundEffectSlider.value = MenuControl.SoundEffectVolume;
         lastPositions = new Vector3[MenuItems.Length];
         SettingsLastPositions = new Vector3[SettingsItems.Length];
-        Debug.Log(SettingsLastPositions.Length);
+        //Debug.Log(SettingsLastPositions.Length);
         foreach (GameObject item in MenuItems)
         {
             lastPositions[i] = MenuItems[i].transform.position;

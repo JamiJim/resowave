@@ -143,12 +143,12 @@ class ONSPAudioPluginUpdater
             {
                 File.Move(currentPluginPath, targetPluginPath);
                 File.Move(currentPluginPath + ".meta", targetPluginMetaPath);
-                UnityEngine.Debug.LogFormat("Spatializer plugin renamed: {0} to {1}", currentPluginPath, targetPluginPath);
+                //UnityEngine.Debug.LogFormat("Spatializer plugin renamed: {0} to {1}", currentPluginPath, targetPluginPath);
                 return true;
             }
             catch (Exception e)
             {
-                UnityEngine.Debug.LogWarningFormat("Unable to rename spatializer plugin: {0}, exception {1}", currentPluginPath, e.Message);
+                //UnityEngine.Debug.LogWarningFormat("Unable to rename spatializer plugin: {0}, exception {1}", currentPluginPath, e.Message);
                 return false;
             }
         }
@@ -195,7 +195,7 @@ class ONSPAudioPluginUpdater
                     }
                     catch (Exception e)
                     {
-                        UnityEngine.Debug.LogWarning("Exception happened when deleting new spatializer plugin: " + e.Message);
+                        //UnityEngine.Debug.LogWarning("Exception happened when deleting new spatializer plugin: " + e.Message);
                     }
                 }
             }
@@ -215,7 +215,7 @@ class ONSPAudioPluginUpdater
                     }
                     catch (Exception e)
                     {
-                        UnityEngine.Debug.LogWarning("Unable to rename the new spatializer plugin: " + e.Message);
+                        //UnityEngine.Debug.LogWarning("Unable to rename the new spatializer plugin: " + e.Message);
                     }
                 }
                 string curX64PluginPath = Path.Combine(pluginsPath, "x86_64/AudioPluginOculusSpatializer.dll");
@@ -230,7 +230,7 @@ class ONSPAudioPluginUpdater
                     }
                     catch (Exception e)
                     {
-                        UnityEngine.Debug.LogWarning("Unable to rename the new spatializer plugin: " + e.Message);
+                        //UnityEngine.Debug.LogWarning("Unable to rename the new spatializer plugin: " + e.Message);
                     }
                 }
 
@@ -254,7 +254,7 @@ class ONSPAudioPluginUpdater
         }
         else
         {
-            UnityEngine.Debug.Log("No new spatializer plugin(s) found");
+            //UnityEngine.Debug.Log("No new spatializer plugin(s) found");
         }
     }
 
